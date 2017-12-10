@@ -11,6 +11,12 @@
         <h1>{{ page.title }}</h1>
         <div class="post-info">
           <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+            {% if page.translation and page.translator %}
+              <a class="w3-text-green" href="{{ SITEURL }}/{{ page.is_translation_of }}" >Original Version</a>
+              <br>
+              Translated by: {{ page.translator }}
+              <br>
+            {% endif %}
             {% import 'translations.html' as translations with context %}
             {{ translations.translations_for(page) }}
           </div>

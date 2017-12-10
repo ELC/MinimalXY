@@ -1,76 +1,55 @@
 MinimalXY Pelican Theme
 =======================
 
-MinimalXY [Pelican](https://getpelican.com/) theme is extended from [minimalX](https://github.com/art1fa/minimalX) by [art1fa](https://github.com/art1fa).
+MinimalXYZ [Pelican](https://getpelican.com/) theme is extended from [minimalXY](https://github.com/petrnohejl/MinimalXY) by [petrnohejl](https://github.com/petrnohejl).
 
-I made some improvements, polishing and SEO optimization. The main purpose of this fork is to keep everything simple and focus on content. I removed all unnecessary parts. You can see this theme live here: [blog.petrnohejl.cz](http://blog.petrnohejl.cz/).
+This is a custom implementation of the MinimalXY Pelican theme for [this website](elc.github.io) and therefore I won't be working on this theme actively.
 
+## Information about the theme
 
-Design focus
-------------
+If you want to know which are the main features of the theme, check the orginal repository at [minimalXY](https://github.com/petrnohejl/MinimalXY) or [minimalX](https://github.com/art1fa/minimalX)
 
-- Minimal flat design
-- Good usability, simple & intuitive navigation
-- Focus on what's really important &ndash; your articles
-- Presented in a clean and straightforward way
+## Differences with the original version
 
+The differences with the XY version are the following:
 
-Features
---------
+- Richer footer
+- Improve directory layout
+- Split views into several partial views
+- Reduce Excesive padding
+- Fix menu item class underline
+- Add translations to articles
+- Use Backref pluging embeded
+- Add estimated time of reading
+- Add support for mentioning translators
+- Add links to archives, tags, categories and authors
+- Change the social buttons positions in authors page
+- Remove unnecesary identation in views
+- Re-use code whenever possible (can be improved)
+- Improve readility by adding identation
 
-- Fully responsive and mobile-first
-- Comments via Disqus integration
-- Social media buttons
-- W3.CSS CSS framework & HTML5 semantics
+## TODOs:
 
+- Reduce the use of custom css and replace it with W3.CSS classes
+- Layout Archives showing all years and months and articles inside the corresponding month
+- Use BEM
+- Migrate Flat to Material Design
 
 Screenshots
 -----------
 
 - [Screenshot #1](screenshot1.png)
 - [Screenshot #2](screenshot2.png)
+- [Screenshot #3](screenshot3.png)
 
+## See it in action
 
-How to use
-----------
+Check [this website](elc.github.io) to see the latest changes in this theme
 
-```python
-# Theme
-THEME = '/path/to/MinimalXY'
+## Other Themes
 
-# Theme customizations
-MINIMALXY_CUSTOM_CSS = 'static/custom.css'
-MINIMALXY_FAVICON = 'favicon.ico'
-MINIMALXY_START_YEAR = 2009
-MINIMALXY_CURRENT_YEAR = date.today().year
+In case you want to see other pelican themes check [this link](http://www.pelicanthemes.com/)
 
-# Author
-AUTHOR_INTRO = u'Hello world! I’m John Doe.'
-AUTHOR_DESCRIPTION = u'Hello world! I’m John Doe. I like coffee, birds and Python.'
-AUTHOR_AVATAR = 'http://www.gravatar.com/avatar/abcdefghijkl?s=240'
-AUTHOR_WEB = 'http://mypersonalsite.com'
-
-# Services
-GOOGLE_ANALYTICS = 'UA-12345678-9'
-DISQUS_SITENAME = 'johndoe'
-
-# Social
-SOCIAL = (
-    ('facebook', 'http://www.facebook.com/johndoe'),
-    ('twitter', 'http://twitter.com/johndoe'),
-    ('github', 'https://github.com/johndoe'),
-    ('linkedin', 'http://www.linkedin.com/in/johndoe'),
-)
-
-# Menu
-MENUITEMS = (
-    ('Categories', '/' + CATEGORIES_SAVE_AS),
-    ('Archive', '/' + ARCHIVES_SAVE_AS),
-)
-```
-
-
-License
--------
+## License
 
 [MIT](LICENSE)
