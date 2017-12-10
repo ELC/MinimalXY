@@ -1,0 +1,29 @@
+{% for article in articles_page.object_list %}
+<article class="w3-container w3-card-2 w3-white col-main">
+
+    <header>
+        {% if article.headerimage %}
+            <div class="headerimage-card">
+                <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ article.headerimage }}" style="width: 100%;"></img></a>
+            </div>
+        {% endif %}
+        
+        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+        
+        {% include 'partials/article_header.html' %}
+    </header>
+
+    <div class="entry-content">
+        {{ article.summary|striptags }}
+    </div>
+
+    <br>
+
+    <footer>
+        <a class="w3-btn w3-green w3-right" href="{{ SITEURL }}/{{ article.url }}">Read &#10093;</a>
+    </footer>
+</article>
+
+<br>
+
+{% endfor %}

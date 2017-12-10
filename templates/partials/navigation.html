@@ -1,0 +1,19 @@
+<nav id="header-menu">
+    <ul>
+        {% if DISPLAY_PAGES_ON_MENU %}
+            {% for p in pages %}
+                <li class="w3-bottombar w3-border-white w3-hover-border-green" ><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+                {% if cat != DEFAULT_CATEGORY %}
+                    <li class="w3-bottombar w3-border-white w3-hover-border-green" {% if cat == category %}style="font-weight: bold;"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% for title, link in MENUITEMS %}
+            <li class="w3-bottombar w3-border-white w3-hover-border-green"><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

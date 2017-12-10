@@ -1,0 +1,23 @@
+<div class="post-info">
+    <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span><time datetime="{{ article.date }}">{{ article.locale_date }}</time> | <a href="{{ SITEURL }}/{{ article.category.url }}" title="All articles in category {{ article.category }}">{{ article.category }}</a> {% if article.ert %}  | Read time {{ article.ert }} {% endif %}</span>
+        <br>
+        {% if article.translation and article.translator %}
+            <a class="w3-text-green" href="{{ SITEURL }}/{{ article.is_translation_of }}" >Original Version</a>
+            <br>
+            Translated by: {{ article.translator }}
+            <br>
+        {% endif %}
+        {% import 'translations.html' as translations with context %}
+        {{ translations.translations_for(article) }}
+    </div>
+    {% if article.tags %}
+    <div class="w3-margin-right">
+        {% for tag in article.tags %}
+        <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
+        <a href="{{ SITEURL }}/{{ tag.url }}" title="All articles with {{ tag.name.title() }} tag">#{{ tag }}</a>
+        </span>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
