@@ -27,11 +27,11 @@ The differences with the XY version are the following:
 - Remove unnecesary identation in views
 - Re-use code whenever possible (can be improved)
 - Improve readility by adding identation
+- Articles in Archives are group by year and month
 
 ## TODOs:
 
 - Reduce the use of custom css and replace it with W3.CSS classes
-- Layout Archives showing all years and months and articles inside the corresponding month
 - Use BEM
 - Migrate Flat to Material Design
 
