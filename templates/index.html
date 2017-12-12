@@ -2,7 +2,7 @@
 
 {% block content_title %}
   {% if articles_page.number == 1 %}
-   {% include 'partials/introduction.html' %}
+   {% include '_includes/introduction.html' %}
   {% endif %}
 {% endblock %}
 
@@ -12,10 +12,10 @@
   
   <section id="listing">
     
-    {% include 'partials/article_loop.html' %}
+    {% include '_includes/article_loop.html' %}
 
     {% if articles_page.has_other_pages() %}
-      {% include 'partials/pagination.html' %}
+      {% include '_includes/pagination.html' %}
       <br>
     {% endif %}
 

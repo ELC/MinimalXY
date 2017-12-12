@@ -1,0 +1,30 @@
+<footer id="footer">
+    <div id="footer-copyright" class="w3-center w3-large w3-text-grey w3-padding-32">
+        <div class="w3-row">
+            <div class="w3-col l4 s12">
+                <h5>Sections</h5>
+                <ul style="list-style-type:none; -webkit-padding-start: 0px;">
+                    {% for p in pages %}
+                        <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="w3-col l4 s12">
+                <h5>Secondary</h5>
+                <ul style="list-style-type:none; -webkit-padding-start: 0px;">
+                    <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+                    <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+                    <li><a href="{{ SITEURL }}/authors.html">Authors</a></li>
+                    <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                </ul>
+            </div>
+            <div class="w3-col l4 s12">
+                <h5>Support</h5>
+                <ul style="list-style-type:none; -webkit-padding-start: 0px;">
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <span>&copy; {{ MINIMALXY_START_YEAR }}{% if MINIMALXY_START_YEAR and MINIMALXY_CURRENT_YEAR %}-{% endif %}{{ MINIMALXY_CURRENT_YEAR }} {{ AUTHOR }} {% if FEED_ALL_ATOM %} | <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>
+    </div>
+</footer>

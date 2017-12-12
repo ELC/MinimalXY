@@ -9,7 +9,7 @@
 <article>
   <header class="w3-container col-main">
     <h1>{{ article.title }}</h1>
-    {% include 'partials/article_header.html' %}
+    {% include '_includes/article_header.html' %}
   </header>
 
   <br>
@@ -31,11 +31,11 @@
     <br>
 
     <footer>
-      {% include 'partials/article_author_info.html' %}
+      {% include '_includes/article_author_info.html' %}
       
       <br>
 
-      {% include 'partials/article_share.html' %}
+      {% include '_includes/article_share.html' %}
 
       <br>
 
@@ -51,7 +51,7 @@
       {% endif %}
 
       {% if DISQUS_SITENAME %}
-        {% include "partials/disqus.html" %}
+        {% include "_includes/disqus.html" %}
         <br>
       {% endif %}
 

@@ -104,7 +104,7 @@
     <div class="w3-row w3-card w3-white">
       <header id="header">
         <a href="{{ SITEURL }}" id="header-logo" title="Home">{{ AUTHOR[0] + AUTHOR[AUTHOR.index(" ")+1] }}</a>
-        {% include 'partials/navigation.html' %}
+        {% include '_includes/navigation.html' %}
       </header>
     </div>
 
@@ -114,14 +114,14 @@
     {% block content %}
     {% endblock %}
 
-    {% include "partials/footer.html" %}
+    {% include "_includes/footer.html" %}
 
     {% if GOOGLE_ANALYTICS %}
-      {% include "partials/ga.html" %}
+      {% include "_includes/ga.html" %}
     {% endif %}
 
     {% if PIWIK_URL and PIWIK_SITE_ID %}
-      {% include "partials/piwik.html" %}
+      {% include "_includes/piwik.html" %}
     {% endif %}
 
   </body>

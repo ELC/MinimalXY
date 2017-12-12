@@ -1,0 +1,9 @@
+<div style="display: flex; align-items: center;">
+    <img style="width: 120px; height: 120px;" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></img>
+    <span class="w3-hover-text-dark-grey" style="font-size: 16pt; font-weight: bold; margin-left: 20px;">{{ author }}</span>
+    <ul class="social w3-right-align" style="flex-grow: 1; padding: 0px;  margin-top: 0px; margin-bottom: 0px;">
+        {% for name, link in SOCIAL %}
+        <li style="font-size: 18pt;"><a class="sc-{{ name }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+        {% endfor %}
+    </ul>
+</div>
