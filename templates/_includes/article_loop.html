@@ -3,18 +3,8 @@
 
     <header>
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-        
         {% include '_includes/article_header.html' %}
-
         <br>
-
-        {% if article.headerimage %}
-            <div class="headerimage-card">
-                <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ article.headerimage }}" style="width: 80%;"></img></a>
-            </div>
-
-            <br>
-        {% endif %}
     </header>
 
     <div class="entry-content">
@@ -22,7 +12,7 @@
     </div>
 
     <br>
-
+    
     <footer>
         <a class="w3-btn w3-green w3-right" href="{{ SITEURL }}/{{ article.url }}">Continue Reading &#10093;</a>
     </footer>

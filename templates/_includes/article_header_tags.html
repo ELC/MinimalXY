@@ -1,0 +1,9 @@
+{% if article.tags %}
+    <div class="w3-margin-right">
+        {% for tag in article.tags %}
+            <span class="w3-tag  w3-hov­er-­shadow w3-light-grey w3-text-green w3-hover-green">
+            <a href="{{ SITEURL }}/{{ tag.url }}" title="All articles with {{ tag.name.title() }} tag">#{{ tag }}</a>
+            </span>
+        {% endfor %}
+    </div>
+{% endif %}

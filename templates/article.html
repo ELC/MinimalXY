@@ -14,18 +14,6 @@
 
   <br>
 
-  {% if article.headerimage %}
-    <div class="headerimage-article">
-      <img src="{{ article.headerimage }}" style="width: 100%;">
-      {% if article.headerimagecaption %}
-        <p class="caption">{{ article.headerimagecaption }}</p>
-      {% endif %}
-    </div>
-
-    <br>
-    
-  {% endif %}
-
   <div class="col-main w3-container">
     <section id="content">
       {{article.content}}
@@ -34,29 +22,16 @@
     <br>
 
     <footer>
+
+      {% include '_includes/article_prev_next.html' %}
+
       {% include '_includes/article_author_info.html' %}
-      
-      <br>
 
       {% include '_includes/article_share.html' %}
 
-      <br>
+      {% include '_includes/article_related_posts.html' %}
 
-      {% if article.related_posts %}
-        <div class="related-posts">
-          <h4>Related posts:</h4>
-          <ul>
-            {% for related_post in article.related_posts %}
-              <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
-      {% if DISQUS_SITENAME %}
-        {% include "_includes/disqus.html" %}
-        <br>
-      {% endif %}
+      {% include "_includes/disqus.html" %}
 
     </footer>
   </div>

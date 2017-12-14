@@ -1,0 +1,10 @@
+{% if article.headerimage %}
+    <div class="headerimage-article">
+        <img src="{{ article.headerimage }}" style="width: 100%;">
+        {% if article.headerimagecaption %}
+            <p class="caption">{{ article.headerimagecaption }}</p>
+        {% endif %}
+    </div>
+
+    <br>
+{% endif %}

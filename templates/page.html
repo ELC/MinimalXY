@@ -1,43 +1,38 @@
-    {% extends "base.html" %}
+{% extends "base.html" %}
 
-    {% block title %}{{ page.title }} &ndash; {{ SITENAME }}{% endblock %}
+{% block title %}{{ page.title }} &ndash; {{ SITENAME }}{% endblock %}
 
-    {% block content %}
+{% block content %}
 
-    <br><br><br>
+<br><br><br>
 
-    <article>
-      <header class="w3-container col-main">
-        <h1>{{ page.title }}</h1>
-        <div class="post-info">
-          <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-            {% if page.translation and page.translator %}
-              <a class="w3-text-green" href="{{ SITEURL }}/{{ page.is_translation_of }}" >Original Version</a>
-              <br>
-              Translated by: {{ page.translator }}
-              <br>
-            {% endif %}
-            {% import 'translations.html' as translations with context %}
-            {{ translations.translations_for(page) }}
-          </div>
-        </div>
-      </header>
-
-      <br>
-
-      <div class="col-main w3-container">
-        <section id="content">
-          {{ page.content }}
-        </section>
-        
-        {% if page.modified %}
-        <br>
-        <p>Last updated: {{ page.locale_modified }}</p>
+<article>
+  <header class="w3-container col-main">
+    <h1>{{ page.title }}</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        {% if page.translation and page.translator %}
+          <a class="w3-text-green" href="{{ SITEURL }}/{{ page.is_translation_of }}" >Original Version</a>
+          <br>
+          Translated by: {{ page.translator }}
+          <br>
         {% endif %}
-
-        <br><br><br>
-        
+        {% import '_macros/translations.html' as translations with context %}
+        {{ translations.translations_for(page) }}
       </div>
-    </article>
+    </div>
+  </header>
 
-    {% endblock content %}
+  <br>
+
+  <div class="col-main w3-container">
+    <section id="content">
+      {{ page.content }}
+    </section>
+    
+    <br><br>
+    
+  </div>
+</article>
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% if article.translation and article.translator %}
+    <a class="w3-text-green" href="{{ SITEURL }}/{{ article.is_translation_of }}" >Original Version</a>
+    <br>
+    Translated by: {{ article.translator }}
+    <br>
+{% endif %}
+{% import '_macros/translations.html' as translations with context %}
+{{ translations.translations_for(article) }}

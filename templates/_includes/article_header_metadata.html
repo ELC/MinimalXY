@@ -1,0 +1,10 @@
+<span>
+    <time datetime="{{ article.date }}">{{ article.locale_date }}</time> |
+     <a href="{{ SITEURL }}/{{ article.category.url }}" title="All articles in category {{ article.category }}">
+        {{ article.category }}
+    </a> 
+    {% if article.ert %}
+        |     Read time {{ article.ert }} 
+    {% endif %}
+</span>
+<br>

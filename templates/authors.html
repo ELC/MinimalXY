@@ -14,7 +14,7 @@
   {%- for author, articles in authors|sort %}
     {% if author==AUTHOR %}
     <div id="{{ author.page_name[7:] }}" class="w3-white w3-border w3-border-green" style="padding: 24px;">
-      {% include "_includes/author_list_item_head.html" %}
+      {% include "_includes/authors_list_item_head.html" %}
 
       <p style="font-size: 12pt; font-style: italic; margin-top: 36px;">{{ AUTHOR_DESCRIPTION }}</p>
 
