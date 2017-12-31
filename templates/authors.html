@@ -13,13 +13,13 @@
 
   {%- for author, articles in authors|sort %}
     {% if author==AUTHOR %}
-    <div id="{{ author.page_name[7:] }}" class="w3-white w3-border w3-border-green" style="padding: 24px;">
+    <div id="{{ author.page_name[7:] }}" class="w3-white w3-border w3-border-blue" style="padding: 24px;">
       {% include "_includes/authors_list_item_head.html" %}
 
       <p style="font-size: 12pt; font-style: italic; margin-top: 36px;">{{ AUTHOR_DESCRIPTION }}</p>
 
       <div style="display: flex; flex-wrap: wrap;">
-        <a class="w3-btn w3-green w3-right" style="margin-top: 12px;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
+        <a class="w3-btn w3-blue w3-right" style="margin-top: 12px;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
         <p style="font-size: 12pt; font-style: italic; margin-top: 36px;">check</p>
 
         <div style="display: flex; flex-wrap: wrap;">
-          <a class="w3-btn w3-green w3-right" style="margin-top: 12px; margin-left: auto;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
+          <a class="w3-btn w3-blue w3-right" style="margin-top: 12px; margin-left: auto;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
         </div>
       </div>
 

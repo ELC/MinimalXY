@@ -1,13 +1,13 @@
 {% if article.related_posts %}
     <h4>Related posts:</h4>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div class="w3-row-padding">
         {% for related_post in article.related_posts %}
-            <div class="w3-card-4" style="width: 270px;  margin: 1%">
-            <a href="{{ SITEURL }}/{{ related_post.url }}"><img src="{{related_post.headerimage}}" style="width:100%"></a>
-            <div class="w3-container w3-center">
-                <strong><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></strong>
-                <h6>{{ related_post.summary }}</h6>
-            </div>
+            <div class="w3-third w3-margin-bottom">
+                <a href="{{ SITEURL }}/{{ related_post.url }}"><img class="w3-hover-opacity w3-card-4" src="{{related_post.headerimage}}" style="width:100%"></a>
+                <div class="w3-container w3-center w3-card w3-padding">
+                    <strong><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></strong>
+                    <h6>{{ related_post.summary }}</h6>
+                </div>
             </div>
         {% endfor %}
     </div>
