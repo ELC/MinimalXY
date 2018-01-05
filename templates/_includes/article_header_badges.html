@@ -1,0 +1,12 @@
+<div style="width:100%" class="w3-margin-bottom">
+    <a href="http://pdfy.net/api/GeneratePDF.aspx?url={{ SITEURL }}/{{ ARTICLE_SAVE_AS | replace("{slug}", article.slug | string) }}"><img src="https://img.shields.io/badge/PDF-Donwload-red.svg?style=for-the-badge&colorA=BB0706&colorB=222222"></a>
+    {% if article.jupyternotebook  %}
+        <a href=""><img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg?style=for-the-badge&colorA=F7761F&colorB=222222"></a>
+    {% endif %}
+    {% if article.jupyterinteractive  %}
+        <a href=""><img src="https://img.shields.io/badge/Jupyter-Interactive-orange.svg?style=for-the-badge&colorA=F7761F&colorB=222222"></a>
+    {% endif %}
+    {% if article.slides  %}
+        <a href=""><img src="https://img.shields.io/badge/Reveal%20JS-Slides-000.svg?style=for-the-badge&colorA=000000&colorB=222222"></a>
+    {% endif %}
+</div>
