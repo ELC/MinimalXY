@@ -1,4 +1,4 @@
-<span>
+<b>
     <time datetime="{{ article.date }}">{{ article.locale_date }}</time> |
      <a href="{{ SITEURL }}/{{ article.category.url }}" title="All articles in category {{ article.category }}">
         {{ article.category }}
@@ -9,5 +9,6 @@
     {% if article.level %}
         |     Level: {{ article.level }} 
     {% endif %}
-</span>
-<br>
+
+    
+</b>

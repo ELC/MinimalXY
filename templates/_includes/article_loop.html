@@ -4,17 +4,17 @@
     <header>
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
         {% include '_includes/article_header.html' %}
-        <br>
     </header>
 
-    <div class="entry-content">
+    <div class="entry-content" style="text-align: justify;">
         {{ article.summary|striptags }}
     </div>
 
-    <br>
-    
-    <footer>
-        <a class="w3-btn w3-blue w3-right" href="{{ SITEURL }}/{{ article.url }}">Continue Reading &#10093;</a>
+    <footer class="w3-margin-top">
+        <div style="display: flex; justify-content: flex-start;  align-items: center;">
+            {% include '_includes/article_header_tags.html' %}
+            <a class="w3-btn w3-blue w3-right" style="margin-left: auto;" href="{{ SITEURL }}/{{ article.url }}">Continue Reading &#10093;</a>
+        </div>
     </footer>
 </article>
 
