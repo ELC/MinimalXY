@@ -10,7 +10,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.1;
+  line-height: 1.6;
 }
 
 h1 {
@@ -51,15 +51,20 @@ abbr[title] {
 
 ::selection {
   color: white;
-  background: #81C784;
+  background: #2196F3;
 }
 
 ::-moz-selection {
   color: white;
-  background: #81C784;
+  background: #2196F3;
 }
 
 /* Classes */
+
+.main_article h1{
+  margin-top: 48px;
+  margin-bottom: 12px;
+}
 
 .gist {
   max-width:100%;
@@ -210,7 +215,7 @@ ul.social li a:hover {
 }
 
 #listing article {
-  padding: 30px;
+  padding: 20px 35px 35px 35px
 }
 
 #content {
