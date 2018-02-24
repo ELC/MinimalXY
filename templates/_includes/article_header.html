@@ -1,15 +1,18 @@
-<div class="post-info">
-    <div class="w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+<div class="post-info w3-margin-bottom">
+    <div class="w3-margin-right " style="flex-grow: 1;">
         <span class="w3-opacity-min">
-        {% include '_includes/article_header_metadata.html' %}
-
-        {% include '_includes/article_header_translations.html' %}
+            {% include '_includes/article_header_metadata.html' %}
         </span>
 
         <span class="w3-margin-left w3-margin-top">
             {% include '_includes/article_header_badges.html' %}
         </span>
     </div>
+
+    <span class="w3-opacity-min">
+        {% include '_includes/article_header_translations.html' %}
+    </span>
     
     {% include '_includes/article_header_headerimage.html' %}
+    <br>
 </div>
