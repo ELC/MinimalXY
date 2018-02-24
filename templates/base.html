@@ -10,6 +10,11 @@
     <meta name="description" content="{{ SITENAME }} &ndash; {{ SITESUBTITLE }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <meta itemprop="name" content="{{ SITENAME }}">
+    <meta itemprop="description" content="{{ SITESUBTITLE }}">
+    <meta itemprop="image" content="{{ SITEIMAGE }}">
+
     <!-- Social -->
     {% if article %}
       <meta property="article:author" content="{{ article.author }}" />
@@ -32,13 +37,13 @@
       <meta property="og:description" content="{{ SITESUBTITLE }}"/>
       <meta property="og:site_name" content="{{ SITENAME }}" />
       <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
-      <meta property="og:image" content="{{ AUTHOR_AVATAR }}"/>
+      <meta property="og:image" content="{{ SITEIMAGE }}"/>
 
       <meta name="twitter:card" content="summary">
       <meta name="twitter:title" content="{{ page.title }}">
       <meta name="twitter:description" content="{{ SITESUBTITLE }}">
       <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}">
-      <meta name="twitter:image" content="{{ AUTHOR_AVATAR }}">
+      <meta name="twitter:image" content="{{ SITEIMAGE }}">
     {% else %}
       <meta property="og:type" content="website"/>
       <meta property="og:title" content="{{ SITENAME }}"/>
@@ -100,8 +105,8 @@
   </head>
 
   <body>
-    <div class="w3-row w3-card w3-white">
-      <header id="header">
+    <div class="w3-row w3-card w3-white" >
+      <header id="header" style="max-width:1100px; margin: 0 auto;">
         <a href="{{ SITEURL }}" id="header-logo" title="Home">{{ AUTHOR[0] + AUTHOR[AUTHOR.index(" ")+1] }}</a>
         {% include '_includes/base_navigation.html' %}
       </header>
