@@ -1,19 +1,19 @@
 {% for article in articles_page.object_list %}
-<article class="w3-container w3-card-2 w3-white col-main">
+<article class="article">
 
-    <header>
+    <header class="article__header">
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
         {% include '_includes/article_header.html' %}
     </header>
 
-    <div class="entry-content" style="text-align: justify;">
+    <div class="article__body">
         {{ article.summary|striptags }}
     </div>
 
-    <footer class="w3-margin-top">
-        <div style="display: flex; justify-content: flex-start;  align-items: center;">
+    <footer class="article__footer">
+        <div class="w3-row">
             {% include '_includes/article_header_tags.html' %}
-            <a class="w3-btn w3-blue w3-right" style="margin-left: auto;" href="{{ SITEURL }}/{{ article.url }}">Continue Reading &#10093;</a>
+            <a class="w3-btn w3-margin-top w3-blue w3-right" href="{{ SITEURL }}/{{ article.url }}">Continue Reading &#10093;</a>
         </div>
     </footer>
 </article>

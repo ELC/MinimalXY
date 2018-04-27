@@ -1,9 +1,9 @@
-<div id="author-block" class="adjust-width w3-light-grey w3-border">
+<div id="author-block" class="w3-light-grey w3-border">
     <div id="author-info">
         {% if  article.author_gravatar %}
-            <img style="width: 120px; height: 120px;" src="{{  article.author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
+            <img style="width: 120px; height: 120px;" src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
         {% else %}
-            <img src="theme/images/avatar.png">
+            <img src="{{ SITEIMAGE }}">
         {% endif %}
         <div style="margin-left: 20px; margin-top: 15px;">
             <a href="{{ AUTHOR_WEB }}"><span id="author-name" class="w3-hover-text-dark-grey">{{ article.author }}</span></a>

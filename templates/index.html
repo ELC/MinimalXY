@@ -6,11 +6,7 @@
   {% endif %}
 {% endblock %}
 
-{% block content %}
-
-  <br>
-  
-  <section id="listing">
+{% block content %} 
     
     {% include '_includes/article_loop.html' %}
 
@@ -18,7 +14,5 @@
       {% include '_includes/pagination.html' %}
       <br>
     {% endif %}
-
-  </section>
 
 {% endblock content %}
