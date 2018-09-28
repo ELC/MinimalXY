@@ -130,6 +130,15 @@
             crossorigin="anonymous"></script>
     <script src="{{ SITEURL }}/theme/js/smoothScroll.js" ></script>
     <script id="dsq-count-scr" src="//elcgweb.disqus.com/count.js" async></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('{{ SITEURL }}/sw.js', { scope: '/' }).then(() => {
+          console.log('Service Worker registered successfully.');
+        }).catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+      }
+    </script>
 
   </body>
 
