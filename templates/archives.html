@@ -4,39 +4,32 @@
 
 {% block content %}
 
-<br><br>
 
-<article>
-  <header class="w3-container col-main">
-    <h1>Archive for {{ SITENAME }}</h1>
+<article class=page>
+  <header class="page-header">
+    <h1>Archive of Posts</h1>
   </header>
 
-  <br>
-
-  <div class="col-main w3-container">
-    <section id="content">
-      <ul>
-        {% for year, year_group in dates|groupby('date.year')|reverse %}
-          <li class="date"><strong><a href="{{ SITEURL }}/posts/{{ (year_group|first).date|strftime('%Y') }}/">{{ (year_group|first).date|strftime('%Y') }}</a></strong></li>
-          <ul>
-          {% for month, month_group in year_group|groupby('date.month')|reverse %}
-            <li class="date"><a href="{{ SITEURL }}/posts/{{ (year_group|first).date|strftime('%Y') }}/{{ (month_group|first).date|strftime('%b') }}/">{{ (month_group|first).date|strftime('%b') }}</a></li>
-            <div class="post archives">
-                <ul>
-                {% for article in month_group %}
-                    <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
-                {% endfor %}
-                </ul>
-            </div>
-          {% endfor %}
-          </ul>
+  <section class="page-content">
+    <ul>
+      {% for year, year_group in dates|groupby('date.year')|reverse %}
+        <li><strong><a href="{{ SITEURL }}/posts/{{ (year_group|first).date|strftime('%Y') }}/">{{ (year_group|first).date|strftime('%Y') }}</a></strong></li>
+        <ul>
+        {% for month, month_group in year_group|groupby('date.month')|reverse %}
+          <li><a href="{{ SITEURL }}/posts/{{ (year_group|first).date|strftime('%Y') }}/{{ (month_group|first).date|strftime('%b') }}/">{{ (month_group|first).date|strftime('%b') }}</a></li>
+          <div>
+              <ul>
+              {% for article in month_group %}
+                  <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+              {% endfor %}
+              </ul>
+          </div>
         {% endfor %}
-      </ul>
-    </section>
+        </ul>
+      {% endfor %}
+    </ul>
+  </section>
 
-    <br><br>
-
-  </div>
 </article>
 
 {% endblock content %}

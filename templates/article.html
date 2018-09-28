@@ -4,35 +4,29 @@
 
 {% block content %}
 
-<br>
-
-<article>
-  <header class="w3-container col-main">
+<article class="article">
+  <header class="article__header">
     <h1>{{ article.title }}</h1>
     {% include '_includes/article_header.html' %}
   </header>
 
-  <div class="col-main w3-container main_article">
-    <section id="content" style="text-align: justify; line-height: 1.8;">
-      {{article.content}}
-    </section>
+  <section >
+    {{article.content}}
+  </section>
 
-    <br>
+  <footer>
 
-    <footer>
+    {% include '_includes/article_prev_next.html' %}
 
-      {% include '_includes/article_prev_next.html' %}
+    {% include '_includes/article_author_info.html' %}
 
-      {% include '_includes/article_author_info.html' %}
+    {% include '_includes/article_share.html' %}
 
-      {% include '_includes/article_share.html' %}
+    {% include '_includes/article_related_posts.html' %}
 
-      {% include '_includes/article_related_posts.html' %}
+    {% include "_includes/disqus.html" %}
 
-      {% include "_includes/disqus.html" %}
-
-    </footer>
-  </div>
+  </footer>
 </article>
 
 {% endblock content %}

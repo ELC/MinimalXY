@@ -4,22 +4,20 @@
 
 {% block content %}
 
-<br><br>
-
-<div class="w3-container col-main">
+<div class="invisible">
   <h1>Author</h1>
 
   <br>
 
   {%- for author, articles in authors|sort %}
     {% if author==AUTHOR %}
-    <div id="{{ author.page_name[7:] }}" class="w3-white w3-border w3-border-blue" style="padding: 24px;">
+    <div>
       {% include "_includes/authors_list_item_head.html" %}
 
-      <p style="font-size: 12pt; font-style: italic; margin-top: 36px;">{{ AUTHOR_DESCRIPTION }}</p>
+      <p>{{ AUTHOR_DESCRIPTION }}</p>
 
-      <div style="display: flex; flex-wrap: wrap;">
-        <a class="w3-btn w3-blue w3-right" style="margin-top: 12px;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
+      <div>
+        <a href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
       </div>
     </div>
 
@@ -34,13 +32,13 @@
 
     {%- for author, articles in authors|sort %}
       {% if author!=AUTHOR %}
-      <div id="{{ author.page_name[7:] }}" class="w3-white w3-border w3-border-grey" style="padding: 24px;">
+      <div>
         {% include "_includes/authors_list_item_head.html" %}
 
-        <p style="font-size: 12pt; font-style: italic; margin-top: 36px;">check</p>
+        <p>check</p>
 
-        <div style="display: flex; flex-wrap: wrap;">
-          <a class="w3-btn w3-blue w3-right" style="margin-top: 12px; margin-left: auto;" href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
+        <div>
+          <a href="{{ SITEURL }}/{{ author.url }}">All articles &#10093;</a>
         </div>
       </div>
 

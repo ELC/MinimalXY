@@ -4,27 +4,19 @@
 
 {% block content %}
 
-<br><br><br>
-
-<article>
-  <header class="w3-container col-main">
+<article class="page">
+  <header class="page-header">
     <h1>Archive for {{ period | reverse | join(' ') }}</h1>
   </header>
 
-  <br>
+  <section class="page-content">
+    <ul>
+    {% for article in dates %}
+      <li><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
 
-  <div class="col-main w3-container">
-    <section id="content">
-      <ul>
-      {% for article in dates %}
-        <li><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
-      {% endfor %}
-      </ul>
-    </section>
-
-    <br><br><br>
-    
-  </div>
 </article>
 
 {% endblock content %}

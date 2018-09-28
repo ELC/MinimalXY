@@ -1,13 +1,13 @@
-<div id="author-block" class="w3-light-grey w3-border">
-    <div id="author-info">
+<div class="invisible">
+    <div >
         {% if  article.author_gravatar %}
-            <img style="width: 120px; height: 120px;" src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
+            <img src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
         {% else %}
             <img src="{{ SITEIMAGE }}">
         {% endif %}
-        <div style="margin-left: 20px; margin-top: 15px;">
-            <a href="{{ AUTHOR_WEB }}"><span id="author-name" class="w3-hover-text-dark-grey">{{ article.author }}</span></a>
-            <p id="author-story">{% if article.author==AUTHOR %}{{ AUTHOR_DESCRIPTION }}{% endif %}</p>
+        <div>
+            <a href="{{ AUTHOR_WEB }}"><span >{{ article.author }}</span></a>
+            <p >{% if article.author==AUTHOR %}{{ AUTHOR_DESCRIPTION }}{% endif %}</p>
         </div>
     </div>
 </div>
