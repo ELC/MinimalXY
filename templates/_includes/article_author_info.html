@@ -1,9 +1,9 @@
 <div class="invisible">
     <div >
         {% if  article.author_gravatar %}
-            <img src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
+            <img alt="Author Gravatar" src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
         {% else %}
-            <img src="{{ SITEIMAGE }}">
+            <img alt="Author Gravatar" src="{{ SITEIMAGE }}">
         {% endif %}
         <div>
             <a href="{{ AUTHOR_WEB }}"><span >{{ article.author }}</span></a>

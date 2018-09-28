@@ -1,8 +1,8 @@
 <div>
     {% if articles[0].author_gravatar %}
-        <img src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
+        <img alt="Author Gravatar" src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
     {% else %}
-        <img src="theme/images/avatar.png">
+        <img alt="Author Gravatar" src="theme/images/avatar.png">
     {% endif %}
     <span >{{ author }}</span>
     <ul>

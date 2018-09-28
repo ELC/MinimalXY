@@ -4,7 +4,7 @@
         {% for related_post in article.related_posts %}
             <div class="article-related-post">
                 {% if related_post.headerimage %}
-                    <a href="{{ SITEURL }}/{{ related_post.url }}"><img class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}"></a>
+                    <a href="{{ SITEURL }}/{{ related_post.url }}"><img alt="Related Article Header Image" class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}"></a>
                 {% endif %}
                 <div class="article-related-post-body">
                     <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>
