@@ -23,5 +23,8 @@
             </ul>
         </div>
     </div>
-    <span>&copy; {{ MINIMALXY_START_YEAR }}{% if MINIMALXY_START_YEAR and MINIMALXY_CURRENT_YEAR %}-{% endif %}{{ MINIMALXY_CURRENT_YEAR }} {{ AUTHOR }} {% if FEED_ALL_ATOM %} | <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>    
+    <div class="copyright">
+        <span>&copy; {{ MINIMALXY_START_YEAR }}{% if MINIMALXY_START_YEAR and MINIMALXY_CURRENT_YEAR %}-{% endif %}{{ MINIMALXY_CURRENT_YEAR }} {{ AUTHOR }}</span>
+        <span> {% if FEED_ALL_ATOM %} <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>    
+    </div>
 </footer>

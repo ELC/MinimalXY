@@ -1,14 +1,10 @@
-<b>
-    <time datetime="{{ article.date }}">{{ article.locale_date }}</time> |
-     <a href="{{ SITEURL }}/{{ article.category.url }}" title="All articles in category {{ article.category }}">
-        {{ article.category }}
-    </a> 
+    <div class="article__metadata-item">
+        <time datetime="{{ article.date }}"><b>{{ article.date.strftime("%d %b %Y") }}</b></time>
+    </div>
+
     {% if article.ert %}
-        |     Read time {{ article.ert }} 
+        <div class="article__metadata-item"><b>{{ article.ert }} to read</b></div>
     {% endif %}
     {% if article.level %}
-        |     Level: {{ article.level }} 
+        <div class="article__metadata-item"><b>Level: {{ article.level }}</b></div>
     {% endif %}
-
-    
-</b>

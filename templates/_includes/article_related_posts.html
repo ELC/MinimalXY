@@ -1,12 +1,14 @@
 {% if article.related_posts %}
-    <h4>Related posts:</h4>
-    <div class="w3-row-padding">
+    <h4 class="related-post-title">Related posts:</h4>
+    <div class="article-related">
         {% for related_post in article.related_posts %}
-            <div class="w3-third w3-margin-bottom">
-                <a href="{{ SITEURL }}/{{ related_post.url }}"><img class="w3-hover-opacity w3-card-4" src="{{related_post.headerimage}}" style="width:100%"></a>
-                <div class="w3-container w3-center w3-card w3-padding">
-                    <strong><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></strong>
-                    <h6>{{ related_post.summary }}</h6>
+            <div class="article-related-post">
+                {% if related_post.headerimage %}
+                    <a href="{{ SITEURL }}/{{ related_post.url }}"><img class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}"></a>
+                {% endif %}
+                <div class="article-related-post-body">
+                    <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>
+                    <span>{{ related_post.summary }}</span>
                 </div>
             </div>
         {% endfor %}

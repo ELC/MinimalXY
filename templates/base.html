@@ -89,9 +89,8 @@
     {% endif %}
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/new_style.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/gruvbox.css">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
+
     {% if MINIMALXY_CUSTOM_CSS %}
       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ MINIMALXY_CUSTOM_CSS }}">
     {% endif %}
@@ -100,6 +99,8 @@
     {% if MINIMALXY_FAVICON %}
       <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/{{ MINIMALXY_FAVICON }}">
     {% endif %}
+
+    {% block head %}{% endblock %}
   </head>
 
   <body>
@@ -115,5 +116,11 @@
     
     {% include "_includes/piwik.html" %}
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="{{ SITEURL }}/theme/js/smoothScroll.js" ></script>
+
   </body>
+
 </html>

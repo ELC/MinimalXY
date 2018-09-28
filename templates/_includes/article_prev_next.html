@@ -1,12 +1,11 @@
 {% if article.prev_article or article.next_article %}
-    <div class="w3-container" style="font-size:12pt">
+    <div>
         {% if article.prev_article %}
-            <a class="w3-btn w3-blue w3-left" style="white-space: pre-wrap; text-align: left; margin-bottom: 10px;" href="{{ SITEURL }}/{{ article.prev_article.url}}">❮ {{ article.prev_article.title }}</a>
+            <a class="article__button" href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
         {% endif %}
         {% if article.next_article %}
-            <a class="w3-btn w3-blue w3-right" style="white-space: pre-wrap; text-align: right; margin-bottom: 10px;" href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }} ❯</a>
+            <a class="article__button" href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}</a>
         {% endif %}
     </div>
 
-    <br>
 {% endif %}

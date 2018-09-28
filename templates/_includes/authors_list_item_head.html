@@ -1,13 +1,13 @@
-<div style="display: flex; align-items: center;">
+<div>
     {% if articles[0].author_gravatar %}
-        <img style="width: 120px; height: 120px;" src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
+        <img src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
     {% else %}
         <img src="theme/images/avatar.png">
     {% endif %}
-    <span class="w3-hover-text-dark-grey" style="font-size: 16pt; font-weight: bold; margin-left: 20px;">{{ author }}</span>
-    <ul class="social w3-right-align" style="flex-grow: 1; padding: 0px;  margin-top: 0px; margin-bottom: 0px;">
+    <span >{{ author }}</span>
+    <ul>
         {% for name, link in SOCIAL %}
-        <li style="font-size: 18pt;"><a class="sc-{{ name }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+        <li ><a class="sc-{{ name }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
         {% endfor %}
     </ul>
 </div>

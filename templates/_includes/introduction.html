@@ -1,15 +1,15 @@
-<div class="w3-row w3-light-grey w3-border-bottom">
-  <aside id="intro" class="w3-container w3-center w3-padding-16">
+<div class="invisible">
+  <aside >
     <div>
-      <span id="intro-description">{{ AUTHOR_INTRO }}</span>
-      <ul class="social" style="margin: 0; margin-top: 10px; padding: 0;">
+      <span>{{ AUTHOR_INTRO }}</span>
+      <ul >
         {% for name, link in SOCIAL %}
-        <li class="w3-hover-text-blue"><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+        <li ><a href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
         {% endfor %}
       </ul>
     </div>
-    <div style="line-height: 180px;">
-      <a href="{{ AUTHOR_WEB }}" target="_blank"><img class="avatar" alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
+    <div >
+      <a href="{{ AUTHOR_WEB }}" target="_blank"><img alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
     </div>
   </aside>
 </div>
