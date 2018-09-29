@@ -103,6 +103,12 @@ nav {
     line-height: 1.8;
 }
 
+.article img, .page img{
+    display: block;
+    max-width:100%;
+    margin: 0 auto;
+}
+
 .article-complete {
     padding: 25px 0;
 }
