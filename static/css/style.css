@@ -109,6 +109,7 @@ nav {
     margin: 0 auto;
 }
 
+
 .article-complete {
     padding: 25px 0;
 }
@@ -221,8 +222,12 @@ nav {
 
 
 .article__badges {
-    display:inline-block;
+    display:inline-flex;
     margin: 10px;
+}
+
+.article__badges img{
+    margin-left: 10px;
 }
 
 .copyright{
@@ -496,6 +501,11 @@ nav {
         width: calc(100% + 4vw);
         padding: 0 2vw;
         font-size: 14pt;
+    }
+
+    .wide {
+        margin: 0 -6vw;
+        max-width: calc(100% + 12vw);
     }
     
 }    
