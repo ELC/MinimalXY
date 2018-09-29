@@ -1,5 +1,5 @@
 {% if article.prev_article or article.next_article %}
-    <div>
+    <div class="invisible">
         {% if article.prev_article %}
             <a class="article__button" href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
         {% endif %}
