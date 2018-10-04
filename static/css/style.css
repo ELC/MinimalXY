@@ -105,10 +105,17 @@ nav {
 
 .article img, .page img{
     display: block;
-    max-width:100%;
-    margin: 0 auto;
+    max-width: 100%;
 }
 
+.narrow{
+    max-width:100%;
+    margin: 0 auto !important;
+}
+
+.extended{
+    width: 100%;
+}
 
 .article-complete {
     padding: 25px 0;
@@ -222,12 +229,14 @@ nav {
 
 
 .article__badges {
-    display:inline-flex;
+    display: flex;
+    justify-content: center;
     margin: 10px;
 }
 
 .article__badges img{
-    margin-left: 10px;
+    margin-left: 5px !important;
+    height: 28px;
 }
 
 .copyright{
@@ -315,10 +324,6 @@ nav {
     font-size:10pt; 
     font-style: italic; 
     text-align:center;
-}
-
-.code{
-    background-color: lightgray;
 }
 
 
@@ -429,6 +434,22 @@ nav {
 
 }
 
+@media only screen and (min-width: 1024px) {
+
+    .article img, .page img{
+        margin-left: -7vw;
+        max-width: calc(100% + 14vw);
+    }
+
+    .gist{
+        margin-left: -7vw;
+        width: calc(100% + 14vw);
+    }
+
+}
+
+
+
 
 
 
@@ -475,15 +496,9 @@ nav {
 }
 
 
-
-
-
-
-
-
 .highlight {
     overflow: auto;
-    padding: 0 1vw;
+    padding-left: 12px;
     margin: 1em auto;
     width: 100%;
     border-radius: 16px;
@@ -491,23 +506,45 @@ nav {
     color: #ebdbb2;
     background-color: #282828;
     font-size: 12pt;
+    box-sizing: border-box;
     }
+
+table .highlight{
+    padding-left: 1em;
+}
+
+table div{
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+
+.linenodiv{
+    width: 4px !important;
+}
+
+@media screen and (min-width: 768px) {
+
+    .linenodiv{
+        width: 0px !important;
+    }
+
+}   
 
 
 @media screen and (min-width: 950px) {
 
+    table{
+        width: calc(100% + 8vw) !important;
+    }
+
     .highlight {
         margin-left: -4vw;
-        width: calc(100% + 4vw);
+        width: calc(100% + 8vw);
         padding: 0 2vw;
         font-size: 14pt;
     }
 
-    .wide {
-        margin: 0 -6vw;
-        max-width: calc(100% + 12vw);
-    }
-    
 }    
 
 
