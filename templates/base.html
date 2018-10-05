@@ -27,12 +27,12 @@
       <meta property="og:title" content="{{ article.title|striptags }}"/>
       <meta property="og:description" content="{{ article.summary|striptags|escape }}"/>
       <meta property="og:site_name" content="{{ SITENAME }}" />
-      <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+      <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}/"/>
 
       <meta name="twitter:card" content="summary">
       <meta name="twitter:title" content="{{ article.title|striptags }}">
       <meta name="twitter:description" content="{{ article.summary|striptags|escape }}">
-      <meta name="twitter:url" content="{{ SITEURL }}/{{ article.url }}">
+      <meta name="twitter:url" content="{{ SITEURL }}/{{ article.url }}/">
     {% elif page %}
       <meta property="og:type" content="article"/>
       <meta property="og:title" content="{{ page.title }}"/>
