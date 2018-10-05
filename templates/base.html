@@ -97,6 +97,14 @@
       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ MINIMALXY_CUSTOM_CSS }}">
     {% endif %}
 
+    <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.inspectlet.com/inspectlet.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.3.1.min.js" as="script" crossorigin="anonymous">
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com/analytics.js" >
+    <link rel="dns-prefetch" href="https://cdn.inspectlet.com/inspectlet.js" >
+    <link rel="dns-prefetch" href="https://code.jquery.com/jquery-3.3.1.min.js" >
+
     <!-- Icon -->
     {% if MINIMALXY_FAVICON %}
       <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/{{ MINIMALXY_FAVICON }}">
