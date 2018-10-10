@@ -1,6 +1,0 @@
-{% if article.translation and article.translator %}
-    Translated by: {{ article.translator }}
-    <br>
-{% endif %}
-{% import '_macros/translations.html' as translations with context %}
-{{ translations.translations_for(article) }}

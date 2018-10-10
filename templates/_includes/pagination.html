@@ -1,7 +1,9 @@
 {% if DEFAULT_PAGINATION %}
 
     {% if not PAGINATOR_LIMIT %}
+
         {% set PAGINATOR_LIMIT = 4 %}
+        
     {% endif %}
 
     {% if articles_page and articles_paginator.num_pages > 1 %}

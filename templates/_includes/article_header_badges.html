@@ -1,8 +1,0 @@
-
-<a href="http://pdfy.net/api/GeneratePDF.aspx?url={{ SITEURL }}/{{ ARTICLE_SAVE_AS | replace("{slug}", article.slug | string) }}"><img alt="Convert To PDF" src="{{ SITEURL }}/theme/images/PDF.svg"></a>
-{% if article.jupyternotebook  %}
-    <a href="{{ article.jupyternotebook }}"><img alt="Jupyter Notebook" src="{{ SITEURL }}/theme/images/Jupyter.svg"></a>
-{% endif %}
-{% if article.slides  %}
-    <a href=""><img alt="Slides" src="{{ SITEURL }}/theme/images/RevealJS.svg"></a>
-{% endif %}

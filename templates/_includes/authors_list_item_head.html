@@ -1,13 +1,11 @@
-<div>
-    {% if articles[0].author_gravatar %}
-        <img alt="Author Gravatar" src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
-    {% else %}
-        <img alt="Author Gravatar" src="theme/images/avatar.png">
-    {% endif %}
-    <span >{{ author }}</span>
-    <ul>
-        {% for name, link in SOCIAL %}
+{% if articles[0].author_gravatar %}
+    <img alt="Author Gravatar" src="{{ articles[0].author_gravatar }}" onerror="this.src='theme/images/avatar.png'">
+{% else %}
+    <img alt="Author Gravatar" src="theme/images/avatar.png">
+{% endif %}
+<span >{{ author }}</span>
+<ul>
+    {% for name, link in SOCIAL %}
         <li ><a class="sc-{{ name }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
-        {% endfor %}
-    </ul>
-</div>
+    {% endfor %}
+</ul>

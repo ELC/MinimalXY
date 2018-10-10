@@ -1,0 +1,21 @@
+<footer class="footer">
+    <div class="footer-container">
+        <ul class="footer-container__column">
+            {% for p in pages %}
+                <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="footer-container__column">
+            <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a></li>
+            <li><a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a></li>
+            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
+        </ul>
+        <ul class="footer-container__column">
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <span>&copy; {{ MINIMALXY_START_YEAR }}{% if MINIMALXY_START_YEAR and MINIMALXY_CURRENT_YEAR %}-{% endif %}{{ MINIMALXY_CURRENT_YEAR }} {{ AUTHOR }}</span>
+        <span> {% if FEED_ALL_ATOM %} <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>    
+    </div>
+</footer>
