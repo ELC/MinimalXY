@@ -1,5 +1,0 @@
-{% if article.tags %}
-    {% for tag in article.tags %}
-        <a class="article__category" href="{{ SITEURL }}/{{ tag.url }}" title="All articles with {{ tag.name.title() }} tag">#{{ tag }}</a>
-    {% endfor %}
-{% endif %}

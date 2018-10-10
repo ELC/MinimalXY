@@ -11,17 +11,10 @@
 
   {%- for author, articles in authors|sort %}
     {% if author==AUTHOR %}
-    <div>
       {% include "_includes/authors_list_item_head.html" %}
 
       <p>{{ AUTHOR_DESCRIPTION }}</p>
-
-      <div>
-        <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
-      </div>
-    </div>
-
-    <br><br><br>
+      <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
 
     {% endif %}
   {% endfor %}
@@ -32,17 +25,10 @@
 
     {%- for author, articles in authors|sort %}
       {% if author!=AUTHOR %}
-      <div>
         {% include "_includes/authors_list_item_head.html" %}
 
         <p>check</p>
-
-        <div>
-          <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
-        </div>
-      </div>
-
-      <br><br><br>
+        <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
 
       {% endif %}
     {% endfor %}

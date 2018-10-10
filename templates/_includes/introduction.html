@@ -1,15 +1,11 @@
 <div class="invisible">
   <aside >
-    <div>
       <span>{{ AUTHOR_INTRO }}</span>
       <ul >
         {% for name, link in SOCIAL %}
         <li ><a href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
         {% endfor %}
       </ul>
-    </div>
-    <div >
       <a href="{{ AUTHOR_WEB }}" target="_blank"><img alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
-    </div>
   </aside>
 </div>
