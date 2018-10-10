@@ -4,7 +4,7 @@ if ('serviceWorker' in navigator) {
 
     window.addEventListener('load', function () {
 
-        navigator.serviceWorker.register('sw.js').then((reg) => {
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
 
             reg.onupdatefound = () => {
                 var installingWorker = reg.installing;
@@ -12,6 +12,7 @@ if ('serviceWorker' in navigator) {
                 installingWorker.onstatechange = () => {
                     switch (installingWorker.state) {
                         case 'installed':
+                        case 'activated':
                             if (navigator.serviceWorker.controller) {
                                 console.log('New or updated content is available.');
                             } else {
