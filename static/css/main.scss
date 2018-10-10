@@ -151,7 +151,8 @@ nav {
 
 .article__header h1,
 .page-header h1,
-.category h1 {
+.category h1,
+.tag h1 {
     margin: 10px 0 15px;
     font-size: 24pt;
 }
@@ -333,7 +334,8 @@ nav {
     margin-bottom: 3em;
 }
 
-.category {
+.category,
+.tag {
     text-align: center;
 }
 
@@ -408,7 +410,8 @@ nav {
 
     .article__header h1,
     .page h1,
-    .category h1 {
+    .category h1,
+    .tag h1 {
         font-size: 28pt;
     }
 
@@ -452,7 +455,8 @@ nav {
 
     .article__header h1,
     .page h1,
-    .category h1 {
+    .category h1,
+    .tag h1 {
         font-size: 32pt;
     }
 

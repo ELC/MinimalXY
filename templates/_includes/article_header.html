@@ -1,15 +1,73 @@
 <div class="article__subheader">
+
+    <!-- Metadata -->
     <span class="article__metadata">
-        {% include '_includes/article_header_metadata.html' %}
+        <div class="article__metadata-item">
+            <time datetime="{{ article.date }}"><b>{{ article.date.strftime("%d %b %Y") }}</b></time>
+        </div>
+    
+        <!-- Time to Read -->
+        {% if article.ert %}
+            <div class="article__metadata-item">
+                <b>{{ article.ert }} to read</b>
+            </div>
+        {% endif %}
+
+        <!-- Level -->
+        {% if article.level %}
+            <div class="article__metadata-item">
+                <b>Level: {{ article.level }}</b>
+            </div>
+        {% endif %}
+
+        <!-- Comments -->
+        <div class="article__metadata-item">
+            <b><a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Comments</a></b>
+        </div>      
+            
     </span>
 
-    <span class="article__badges">
-        {% include '_includes/article_header_badges.html' %}
+    <!-- Badges -->
+    <span class="article__badges">        
+        <a href="http://pdfy.net/api/GeneratePDF.aspx?url={{ SITEURL }}/{{ ARTICLE_SAVE_AS | replace("{slug}", article.slug | string) }}">
+            <img alt="Convert To PDF" src="{{ SITEURL }}/theme/images/PDF.svg">
+        </a>
+        
+        {% if article.jupyternotebook  %}
+            <a href="{{ article.jupyternotebook }}">
+                <img alt="Jupyter Notebook" src="{{ SITEURL }}/theme/images/Jupyter.svg">
+            </a>
+        {% endif %}
+
+        {% if article.slides  %}
+            <a href="">
+                <img alt="Slides" src="{{ SITEURL }}/theme/images/RevealJS.svg">
+            </a>
+        {% endif %}
+
     </span>
 </div>
 
+<!-- Translations -->
 <div class="article__translations">
-    {% include '_includes/article_header_translations.html' %}
+    {% if article.translation and article.translator %}
+        Translated by: {{ article.translator }}
+        <br>
+    {% endif %}
+
+    {% import '_macros/translations.html' as translations with context %}
+
+    {{ translations.translations_for(article) }}
 </div>
 
-{% include '_includes/article_header_headerimage.html' %}
+
+<!-- Header Image -->
+{% if article.headerimage %}
+    <div class="headerimage-article">
+        <img alt="Article Header Image" src="{{ article.headerimage }}" width="100%" height="300px">
+        {% if article.headerimagecaption %}
+            <p class="caption">{{ article.headerimagecaption }}</p>
+        {% endif %}
+    </div>
+{% endif %}
+

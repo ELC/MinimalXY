@@ -1,0 +1,62 @@
+<!-- Previous And Next Articles -->
+{% if article.prev_article or article.next_article %}
+<div class="invisible">
+    {% if article.prev_article %}
+        <a class="article__button" href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
+    {% endif %}
+    {% if article.next_article %}
+        <a class="article__button" href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}</a>
+    {% endif %}
+</div>
+{% endif %}
+
+
+<!-- Author -->
+<div class="invisible">
+    {% if  article.author_gravatar %}
+        <img alt="Author Gravatar" src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
+    {% else %}
+        <img alt="Author Gravatar" src="{{ SITEIMAGE }}">
+    {% endif %}
+        <a href="{{ AUTHOR_WEB }}"><span >{{ article.author }}</span></a>
+        <p >{% if article.author==AUTHOR %}{{ AUTHOR_DESCRIPTION }}{% endif %}</p>
+</div>
+
+
+<!-- Share -->
+<p class="share-invitation">Did you like this article? Share it with your friends!</p>
+
+<div class="share">
+<a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button">
+  <i class="fa fa-facebook"></i>
+  <span>Facebook</span>
+</a>
+<a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="twitter-button">
+  <i class="fa fa-twitter"></i>
+  <span>Twitter</span>
+</a>
+<a href="https://plus.google.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="google-button">
+  <i class="fa fa-google-plus"></i>
+  <span>Google</span>
+</a>
+</div>
+
+<!-- Related Posts -->
+{% if article.related_posts %}
+<h4 class="related-post-title">Related posts:</h4>
+<div class="article-related">
+    {% for related_post in article.related_posts %}
+        <div class="article-related-post">
+            {% if related_post.headerimage %}
+                <a href="{{ SITEURL }}/{{ related_post.url }}">
+                  <img alt="Related Article Header Image" class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}">
+                </a>
+            {% endif %}
+            <div class="article-related-post-body">
+                <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>
+                <span>{{ related_post.summary }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -93,22 +93,14 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
 
-    {% if MINIMALXY_CUSTOM_CSS %}
-      <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ MINIMALXY_CUSTOM_CSS }}">
-    {% endif %}
 
+    <!-- Preloads -->
     <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script" crossorigin="anonymous">
     <link rel="preload" href="https://cdn.inspectlet.com/inspectlet.js" as="script" crossorigin="anonymous">
-    <link rel="preload" href="https://code.jquery.com/jquery-3.3.1.min.js" as="script" crossorigin="anonymous">
 
     <link rel="dns-prefetch" href="https://www.google-analytics.com/analytics.js" >
     <link rel="dns-prefetch" href="https://cdn.inspectlet.com/inspectlet.js" >
-    <link rel="dns-prefetch" href="https://code.jquery.com/jquery-3.3.1.min.js" >
 
-    <!-- Icon -->
-    {% if MINIMALXY_FAVICON %}
-      <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/{{ MINIMALXY_FAVICON }}">
-    {% endif %}
 
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/apple-touch-icon.png">
@@ -119,59 +111,23 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#ffffff">
 
-    {% if ENVIRONMENT %}
-    <!-- Begin Inspectlet Asynchronous Code -->
-    <script type="text/javascript">
-      (function() {
-      window.__insp = window.__insp || [];
-      __insp.push(['wid', 201674813]);
-      var ldinsp = function(){
-      if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=201674813&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-      setTimeout(ldinsp, 0);
-      })();
-    </script>
-    <!-- End Inspectlet Asynchronous Code -->
-    {% endif %}
-
     {% block head %}{% endblock %}
   </head>
 
   <body>
-    {% include '_includes/base_navigation.html' %}
+    {% include '_includes/navigation.html' %}
 
     {% block content_title %}{% endblock %}
 
     {% block content %}{% endblock %}
 
-    {% include "_includes/base_footer.html" %}
-
-    {% include "_includes/ga.html" %}
-    
-    {% include "_includes/piwik.html" %}
-
+    {% include "_includes/footer.html" %}
+   
     <script src="{{ SITEURL }}/theme/js/scripts.js" ></script>
 
     {% if ENVIRONMENT %}
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script id="dsq-count-scr" src="//elcgweb.disqus.com/count.js" async></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('{{ SITEURL }}/sw.js', { scope: '/' })
-          .catch(error => { console.log('Service Worker registration failed:', error); });
-      }
-
-      navigator.serviceWorker.addEventListener('controllerchange', event => {
-        navigator.serviceWorker.controller.addEventListener('statechange', () => {
-          if (this.state === 'activated') {
-            console.log('All Resources cached, you can continue offline');
-          }
-        });
-      });
-      
-    </script>
+      {% include "_includes/external.html" %}
 
     {% endif %}
 

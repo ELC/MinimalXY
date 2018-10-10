@@ -5,28 +5,26 @@
 {% block content %}
 
 <article class="article">
+
   <header class="article__header">
     <h1>{{ article.title }}</h1>
+    
     {% include '_includes/article_header.html' %}
   </header>
 
-  <section >
+
+  <section>
     {{article.content}}
   </section>
 
+
   <footer>
+    {% include '_includes/article_footer.html' %}
 
-    {% include '_includes/article_prev_next.html' %}
-
-    {% include '_includes/article_author_info.html' %}
-
-    {% include '_includes/article_share.html' %}
-
-    {% include '_includes/article_related_posts.html' %}
-
+    <!-- Comments -->
     {% include "_includes/disqus.html" %}
-
   </footer>
+
 </article>
 
 {% endblock content %}

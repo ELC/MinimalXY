@@ -5,6 +5,7 @@
 {% block content %}
 
 <article class="page">
+  
   <header class="page-header">
     <h1>Tags</h1>
   </header>
@@ -12,7 +13,9 @@
   <section class="page-content">
     <ul>
     {%- for tag, articles in tags|sort %}
-      <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
+      <li>
+        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a>
+      </li>
     {% endfor %}
     </ul>
   </section>
