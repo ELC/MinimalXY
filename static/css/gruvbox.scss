@@ -1,0 +1,431 @@
+.highlight {
+    overflow: auto;
+    padding-left: 12px;
+    margin: 1em auto;
+    width: 100%;
+    border-radius: 16px;
+    background: #282828;
+    color: #ebdbb2;
+    background-color: #282828;
+    font-size: 12pt;
+    box-sizing: border-box;
+
+    .hll {
+        background-color: #ffffcc;
+    }
+
+    /* Comment */
+    .c {
+        color: #928374;
+        font-style: italic;
+    }
+
+    /* Error */
+    .err {
+        color: #ebdbb2;
+    }
+
+    /* Escape */
+    .esc {
+        color: #ebdbb2;
+    }
+
+    /* Generic */
+    .g {
+        color: #ebdbb2;
+    }
+
+    /* Keyword */
+    .k {
+        color: #fe8019;
+    }
+
+    /* Literal */
+    .l {
+        color: #ebdbb2;
+    }
+
+    /* Name */
+    .n {
+        color: #ebdbb2;
+    }
+
+    /* Operator */
+    .o {
+        color: #fe8019;
+    }
+
+    /* Other */
+    .x {
+        color: #ebdbb2;
+    }
+
+    /* Punctuation */
+    .p {
+        color: #ebdbb2;
+    }
+
+    /* Comment.Hashbang */
+    .ch {
+        color: #928374;
+        font-style: italic;
+    }
+
+    /* Comment.Multiline */
+    .cm {
+        color: #928374;
+        font-style: italic;
+    }
+
+    /* Comment.Preproc */
+    .cp {
+        color: #8ec07c;
+    }
+
+
+    /* Comment.Single */
+    .c1 {
+        color: #928374;
+        font-style: italic;
+    }
+
+    /* Comment.Special */
+    .cs {
+        color: #928374;
+        font-style: italic;
+    }
+
+    /* Generic.Deleted */
+    .gd {
+        color: #282828;
+        background-color: #fb4934
+    }
+
+    /* Generic.Emph */
+    .ge {
+        color: #83a598;
+        text-decoration: underline;
+    }
+
+    /* Generic.Error */
+    .gr {
+        color: #ebdbb2;
+        font-weight: bold;
+        background-color: #fb4934
+    }
+
+    /* Generic.Heading */
+    .gh {
+        color: #b8bb26;
+        font-weight: bold;
+    }
+
+    /* Generic.Inserted */
+    .gi {
+        color: #282828;
+        background-color: #b8bb26
+    }
+
+    /* Generic.Output */
+    .go {
+        color: #504945;
+    }
+
+    /* Generic.Prompt */
+    .gp {
+        color: #ebdbb2;
+    }
+
+    /* Generic.Strong */
+    .gs {
+        color: #ebdbb2;
+    }
+
+    /* Generic.Subheading */
+    .gu {
+        color: #b8bb26;
+        font-weight: bold;
+    }
+
+    /* Generic.Traceback */
+    .gt {
+        color: #ebdbb2;
+        font-weight: bold;
+        background-color: #fb4934
+    }
+
+    /* Keyword.Constant */
+    .kc {
+        color: #fe8019;
+    }
+
+    /* Keyword.Declaration */
+    .kd {
+        color: #fe8019;
+    }
+
+    /* Keyword.Namespace */
+    .kn {
+        color: #fe8019;
+    }
+
+    /* Keyword.Pseudo */
+    .kp {
+        color: #fe8019;
+    }
+
+    /* Keyword.Reserved */
+    .kr {
+        color: #fe8019;
+    }
+
+    /* Keyword.Type */
+    .kt {
+        color: #fabd2f;
+    }
+
+    /* Literal.Date */
+    .ld {
+        color: #ebdbb2;
+    }
+
+    /* Literal.Number */
+    .m {
+        color: #d3869b;
+    }
+
+    /* Literal.String */
+    .s {
+        color: #b8bb26;
+    }
+
+
+    /* Name.Attribute */
+    .na {
+        color: #b8bb26;
+        font-weight: bold;
+    }
+
+    /* Name.Builtin */
+    .nb {
+        color: #fabd2f;
+    }
+
+    /* Name.Class */
+    .nc {
+        color: #ebdbb2;
+    }
+
+    /* Name.Constant */
+    .no {
+        color: #d3869b;
+    }
+
+    /* Name.Decorator */
+    .nd {
+        color: #ebdbb2;
+    }
+
+    /* Name.Entity */
+    .ni {
+        color: #fabd2f;
+    }
+
+    /* Name.Exception */
+    .ne {
+        color: #fb4934;
+    }
+
+    /* Name.Function */
+    .nf {
+        color: #fabd2f;
+    }
+
+    /* Name.Label */
+    .nl {
+        color: #fb4934;
+    }
+
+    /* Name.Namespace */
+    .nn {
+        color: #ebdbb2;
+    }
+
+    /* Name.Other */
+    .nx {
+        color: #ebdbb2;
+    }
+
+    /* Name.Property */
+    .py {
+        color: #ebdbb2;
+    }
+
+    /* Name.Tag */
+    .nt {
+        color: #fb4934;
+    }
+
+    /* Name.Variable */
+    .nv {
+        color: #ebdbb2;
+    }
+
+    /* Operator.Word */
+    .ow {
+        color: #fe8019;
+    }
+
+    /* Text.Whitespace */
+    .w {
+        color: #ebdbb2;
+    }
+
+    /* Literal.Number.Bin */
+    .mb {
+        color: #d3869b;
+    }
+
+    /* Literal.Number.Float */
+    .mf {
+        color: #d3869b;
+    }
+
+    /* Literal.Number.Hex */
+    .mh {
+        color: #d3869b;
+    }
+
+    /* Literal.Number.Integer */
+    .mi {
+        color: #d3869b;
+    }
+
+    /* Literal.Number.Oct */
+    .mo {
+        color: #d3869b;
+    }
+
+    /* Literal.String.Backtick */
+    .sb {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Char */
+    .sc {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Doc */
+    .sd {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Double */
+    .s2 {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Escape */
+    .se {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Heredoc */
+    .sh {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Interpol */
+    .si {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Other */
+    .sx {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Regex */
+    .sr {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Single */
+    .s1 {
+        color: #b8bb26;
+    }
+
+    /* Literal.String.Symbol */
+    .ss {
+        color: #83a598;
+    }
+
+    /* Name.Builtin.Pseudo */
+    .bp {
+        color: #fabd2f;
+    }
+
+    /* Name.Variable.Class */
+    .vc {
+        color: #ebdbb2;
+    }
+
+    /* Name.Variable.Global */
+    .vg {
+        color: #ebdbb2;
+    }
+
+    /* Name.Variable.Instance */
+    .vi {
+        color: #ebdbb2;
+    }
+
+    /* Literal.Number.Integer.Long */
+    .il {
+        color: #d3869b;
+    }
+
+}
+
+table {
+
+    .highlight {
+        padding-left: 1em;
+    }
+
+    div {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+}
+
+
+.linenodiv {
+    width: 4px !important;
+}
+
+@media screen and (min-width: 768px) {
+
+    .linenodiv {
+        width: 0px !important;
+    }
+
+}
+
+
+@media screen and (min-width: 950px) {
+
+    table {
+        width: calc(100% + 8vw) !important;
+    }
+
+    .highlight {
+        margin-left: -4vw;
+        width: calc(100% + 8vw);
+        padding: 0 2vw;
+        font-size: 14pt;
+    }
+
+}
