@@ -156,6 +156,7 @@ nav {
     img {
         display: block;
         max-width: 100%;
+        margin: 0 auto;
 
         @media only screen and (min-width: $xlarge-break-point) {
             margin-left: -7vw;
