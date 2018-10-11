@@ -101,7 +101,8 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com/analytics.js" >
     <link rel="dns-prefetch" href="https://cdn.inspectlet.com/inspectlet.js" >
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Fonts -->
+    <script src="https://use.fontawesome.com/6af5d1a69f.js" async></script>
 
 
     <!-- FAVICON -->
@@ -118,6 +119,9 @@
   </head>
 
   <body>
+
+    <a id="topbar"></a>
+
     {% include '_includes/navigation.html' %}
 
     {% block content_title %}{% endblock %}
@@ -125,6 +129,8 @@
     {% block content %}{% endblock %}
 
     {% include "_includes/footer.html" %}
+
+    <a href="#topbar" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
 
     <div id="toast">
       <div id="toast--icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>

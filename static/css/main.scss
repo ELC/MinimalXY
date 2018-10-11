@@ -446,3 +446,27 @@ nav {
         width: calc(100% + 14vw);
     }
 }
+
+$max-height: 60px;
+$min-height: 40px;
+
+.back-to-top{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: bottom 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    position: fixed;
+    right: 4vw;
+    z-index: 1;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    visibility: hidden;
+    
+    @include fluid-type(bottom, 320px, 1024px, 7vw, 3vw);
+    @include fluid-type(font-size, 320px, 1024px, 12pt, 18pt);
+
+    @include fluid-type(border-radius, 320px, 1024px, $min-height, $max-height);
+    @include fluid-type(width, 320px, 1024px, $min-height, $max-height);
+    @include fluid-type(height, 320px, 1024px, $min-height, $max-height);
+    @include fluid-type(line-height, 320px, 1024px, $min-height * 1.1, $max-height);
+}
+
