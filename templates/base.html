@@ -117,6 +117,9 @@
   </head>
 
   <body>
+
+    <a id="topbar"></a>
+
     {% include '_includes/navigation.html' %}
 
     {% block content_title %}{% endblock %}
@@ -124,6 +127,8 @@
     {% block content %}{% endblock %}
 
     {% include "_includes/footer.html" %}
+
+    <a href="#topbar" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <div id="toast">
       <div id="toast--icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
