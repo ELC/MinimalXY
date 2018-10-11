@@ -1,20 +1,14 @@
+@import 'auxiliary';
+
 $final-opacity: 0.9;
 $final-width: 300px;
 $final-width-medium: 400px;
 $final-width-large: 500px;
-$height: 50px;
-
-@mixin crossBrowser($property, $val) {
-    -webkit-#{$property}: $val;
-    -moz-#{$property}: $val;
-    -ms-#{$property}: $val;
-    #{$property}: $val;
-}
+$max-height: 50px;
+$min-height: 30px;
 
 #toast {
     visibility: hidden;
-    max-width: 50px;
-    height: $height;
     margin: auto;
     background-color: #333;
     color: #fff;
@@ -25,29 +19,24 @@ $height: 50px;
     left: 0;
     right: 0;
     bottom: 30px;
-    font-size: 12px;
     white-space: nowrap;
+    @include fluid-type(font-size, 320px, 1024px, 10pt, 18pt);
+    @include fluid-type(height, 320px, 1024px, $min-height, $max-height);
+    @include fluid-type(max-width, 320px, 1024px, $min-height, $max-height);
     opacity: $final-opacity;
 
-    @media only screen and (min-width: 768px) {
-        font-size: 14px;
-    }
-
-    @media only screen and (min-width: 1024px) {
-        font-size: 18px;
-    }
 
     #toast--icon {
-        width: 50px;
-        height: $height;
-        line-height: $height;
         border-radius: 10px;
-        float: left;        
+        float: left;
         background-color: #111;
+        @include fluid-type(width, 320px, 1024px, $min-height, $max-height);
+        @include fluid-type(height, 320px, 1024px, $min-height, $max-height);
+        @include fluid-type(line-height, 320px, 1024px, $min-height, $max-height);
     }
 
     #toast--desc {
-        line-height: $height;
+        @include fluid-type(line-height, 320px, 1024px, $min-height, $max-height);
     }
 
 }
@@ -84,7 +73,7 @@ $height: 50px;
 
 @-webkit-keyframes expand {
     from {
-        min-width: 50px
+        min-width: $min-height
     }
 
     to {
@@ -94,7 +83,7 @@ $height: 50px;
 
 @keyframes expand {
     from {
-        min-width: 50px
+        min-width: $min-height
     }
 
     to {
@@ -128,7 +117,7 @@ $height: 50px;
     }
 
     to {
-        min-width: 50px;
+        min-width: $min-height;
     }
 }
 
@@ -138,7 +127,7 @@ $height: 50px;
     }
 
     to {
-        min-width: 50px;
+        min-width: $min-height;
     }
 }
 
@@ -170,7 +159,7 @@ $height: 50px;
 
     @-webkit-keyframes expand {
         from {
-            min-width: 50px
+            min-width: $min-height
         }
 
         to {
@@ -180,7 +169,7 @@ $height: 50px;
 
     @keyframes expand {
         from {
-            min-width: 50px
+            min-width: $min-height
         }
 
         to {
@@ -214,7 +203,7 @@ $height: 50px;
         }
 
         to {
-            min-width: 50px;
+            min-width: $min-height;
         }
     }
 
@@ -224,7 +213,7 @@ $height: 50px;
         }
 
         to {
-            min-width: 50px;
+            min-width: $min-height;
         }
     }
 
@@ -234,7 +223,7 @@ $height: 50px;
 
     @-webkit-keyframes expand {
         from {
-            min-width: 50px
+            min-width: $max-height
         }
 
         to {
@@ -244,7 +233,7 @@ $height: 50px;
 
     @keyframes expand {
         from {
-            min-width: 50px
+            min-width: $max-height
         }
 
         to {
@@ -278,7 +267,7 @@ $height: 50px;
         }
 
         to {
-            min-width: 50px;
+            min-width: $max-height;
         }
     }
 
@@ -288,7 +277,7 @@ $height: 50px;
         }
 
         to {
-            min-width: 50px;
+            min-width: $max-height;
         }
     }
 }
