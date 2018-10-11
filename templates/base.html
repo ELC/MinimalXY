@@ -101,6 +101,8 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com/analytics.js" >
     <link rel="dns-prefetch" href="https://cdn.inspectlet.com/inspectlet.js" >
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/apple-touch-icon.png">
@@ -124,8 +126,8 @@
     {% include "_includes/footer.html" %}
 
     <div id="toast">
-      <div id="img"></div>
-      <div id="desc"></div>
+      <div id="toast--icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+      <div id="toast--desc"></div>
     </div>
    
     <script src="{{ SITEURL }}/theme/js/scripts.js" ></script>

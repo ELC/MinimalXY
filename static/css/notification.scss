@@ -1,55 +1,62 @@
+$final-opacity: 0.9;
+$final-width: 300px;
+$final-width-medium: 400px;
+$final-width-large: 500px;
+$height: 50px;
+
+@mixin crossBrowser($property, $val) {
+    -webkit-#{$property}: $val;
+    -moz-#{$property}: $val;
+    -ms-#{$property}: $val;
+    #{$property}: $val;
+}
+
 #toast {
     visibility: hidden;
     max-width: 50px;
-    height: 50px;
-    /*margin-left: -125px;*/
+    height: $height;
     margin: auto;
     background-color: #333;
     color: #fff;
     text-align: center;
-    border-radius: 2px;
-
+    border-radius: 10px;
     position: fixed;
     z-index: 1;
     left: 0;
     right: 0;
     bottom: 30px;
-    font-size: 17px;
+    font-size: 12px;
     white-space: nowrap;
-}
+    opacity: $final-opacity;
 
-#toast #img {
-    width: 50px;
-    height: 50px;
+    @media only screen and (min-width: 768px) {
+        font-size: 14px;
+    }
 
-    float: left;
+    @media only screen and (min-width: 1024px) {
+        font-size: 18px;
+    }
 
-    padding-top: 16px;
-    padding-bottom: 16px;
+    #toast--icon {
+        width: 50px;
+        height: $height;
+        line-height: $height;
+        border-radius: 10px;
+        float: left;        
+        background-color: #111;
+    }
 
-    box-sizing: border-box;
+    #toast--desc {
+        line-height: $height;
+    }
 
-
-    background-color: #111;
-    color: #fff;
-}
-
-#toast #desc {
-
-
-    color: #fff;
-
-    padding: 16px;
-
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 #toast.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+    @include crossBrowser(animation, (fadein 0.5s, expand 1s 0.5s, stay 3s 1.5s, shrink 1s 4.5s, fadeout 0.5s 5.5s));
 }
+
 
 @-webkit-keyframes fadein {
     from {
@@ -59,7 +66,7 @@
 
     to {
         bottom: 30px;
-        opacity: 1;
+        opacity: $final-opacity;
     }
 }
 
@@ -71,7 +78,7 @@
 
     to {
         bottom: 30px;
-        opacity: 1;
+        opacity: $final-opacity;
     }
 }
 
@@ -81,7 +88,7 @@
     }
 
     to {
-        min-width: 350px
+        min-width: $final-width;
     }
 }
 
@@ -91,33 +98,33 @@
     }
 
     to {
-        min-width: 350px
+        min-width: $final-width;
     }
 }
 
 @-webkit-keyframes stay {
     from {
-        min-width: 350px
+        min-width: $final-width;
     }
 
     to {
-        min-width: 350px
+        min-width: $final-width;
     }
 }
 
 @keyframes stay {
     from {
-        min-width: 350px
+        min-width: $final-width;
     }
 
     to {
-        min-width: 350px
+        min-width: $final-width;
     }
 }
 
 @-webkit-keyframes shrink {
     from {
-        min-width: 350px;
+        min-width: $final-width;
     }
 
     to {
@@ -127,7 +134,7 @@
 
 @keyframes shrink {
     from {
-        min-width: 350px;
+        min-width: $final-width;
     }
 
     to {
@@ -138,7 +145,7 @@
 @-webkit-keyframes fadeout {
     from {
         bottom: 30px;
-        opacity: 1;
+        opacity: $final-opacity;
     }
 
     to {
@@ -150,11 +157,138 @@
 @keyframes fadeout {
     from {
         bottom: 30px;
-        opacity: 1;
+        opacity: $final-opacity;
     }
 
     to {
         bottom: 60px;
         opacity: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    @-webkit-keyframes expand {
+        from {
+            min-width: 50px
+        }
+
+        to {
+            min-width: $final-width-medium;
+        }
+    }
+
+    @keyframes expand {
+        from {
+            min-width: 50px
+        }
+
+        to {
+            min-width: $final-width-medium;
+        }
+    }
+
+    @-webkit-keyframes stay {
+        from {
+            min-width: $final-width-medium;
+        }
+
+        to {
+            min-width: $final-width-medium;
+        }
+    }
+
+    @keyframes stay {
+        from {
+            min-width: $final-width-medium;
+        }
+
+        to {
+            min-width: $final-width-medium;
+        }
+    }
+
+    @-webkit-keyframes shrink {
+        from {
+            min-width: $final-width-medium;
+        }
+
+        to {
+            min-width: 50px;
+        }
+    }
+
+    @keyframes shrink {
+        from {
+            min-width: $final-width-medium;
+        }
+
+        to {
+            min-width: 50px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    @-webkit-keyframes expand {
+        from {
+            min-width: 50px
+        }
+
+        to {
+            min-width: $final-width-large;
+        }
+    }
+
+    @keyframes expand {
+        from {
+            min-width: 50px
+        }
+
+        to {
+            min-width: $final-width-large;
+        }
+    }
+
+    @-webkit-keyframes stay {
+        from {
+            min-width: $final-width-large;
+        }
+
+        to {
+            min-width: $final-width-large;
+        }
+    }
+
+    @keyframes stay {
+        from {
+            min-width: $final-width-large;
+        }
+
+        to {
+            min-width: $final-width-large;
+        }
+    }
+
+    @-webkit-keyframes shrink {
+        from {
+            min-width: $final-width-large;
+        }
+
+        to {
+            min-width: 50px;
+        }
+    }
+
+    @keyframes shrink {
+        from {
+            min-width: $final-width-large;
+        }
+
+        to {
+            min-width: 50px;
+        }
     }
 }

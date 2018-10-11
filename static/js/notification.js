@@ -1,22 +1,24 @@
+
+
 function launch_toast(message) {
     
-    var x = document.getElementById("toast")
+    let toast = document.getElementById("toast");
     
-    x.className = "show";
+    toast.className = "show";
 
-    component = document.getElementById('desc');
+    let toastDescription = document.getElementById('toast--desc');
 
     setTimeout(() => {
-        component.innerHTML = message;
-    }, 650);
+        toastDescription.innerHTML = message;
+    }, 600);
     
 
     setTimeout(() => {
-        component.innerHTML = '';
-    }, 4000);
+        toastDescription.innerHTML = '';
+    }, 4500);
 
 
     setTimeout(() => {
-        x.className = x.className.replace("show", "");
-    }, 5000);
+        toast.className = toast.className.replace("show", "");
+    }, 6000);
 }
