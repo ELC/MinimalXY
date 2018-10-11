@@ -14,9 +14,9 @@ if ('serviceWorker' in navigator) {
                         case 'installed':
                         case 'activated':
                             if (navigator.serviceWorker.controller) {
-                                console.log('New or updated content is available.');
+                                launch_toast('Reload to get updated content.');
                             } else {
-                                console.log('Content is now available offline!');
+                                launch_toast('Content is now available offline!');
                             }
                             break;
                         case 'redundant':
