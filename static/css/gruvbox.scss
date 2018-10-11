@@ -10,6 +10,15 @@
     font-size: 12pt;
     box-sizing: border-box;
 
+    @media screen and (min-width: 950px) {
+
+        margin-left: -4vw;
+        width: calc(100% + 8vw);
+        padding: 0 2vw;
+        font-size: 14pt;
+    }
+
+
     .hll {
         background-color: #ffffcc;
     }
@@ -399,33 +408,17 @@ table {
         width: 100% !important;
     }
 
-}
-
-
-.linenodiv {
-    width: 4px !important;
-}
-
-@media screen and (min-width: 768px) {
-
-    .linenodiv {
-        width: 0px !important;
-    }
-
-}
-
-
-@media screen and (min-width: 950px) {
-
-    table {
+    @media screen and (min-width: 950px) {
         width: calc(100% + 8vw) !important;
     }
 
-    .highlight {
-        margin-left: -4vw;
-        width: calc(100% + 8vw);
-        padding: 0 2vw;
-        font-size: 14pt;
+}
+
+.linenodiv {
+    width: 4px !important;
+
+    @media screen and (min-width: 768px) {
+        width: 0px !important;
     }
 
 }

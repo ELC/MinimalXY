@@ -40,6 +40,38 @@
     }
 }
 
+@mixin fluid-type3($properties, $min-vw, $medium-vw, $max-vw, $min-value, $medium-value, $max-value) {
+    @each $property in $properties {
+        #{$property}: $min-value;
+    }
+
+    @media (min-width: $min-vw) {
+        @each $property in $properties {
+            #{$property}: calc(#{$min-value} + #{strip-unit($medium-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($medium-vw - $min-vw)});
+        }
+    }
+
+    @media (min-width: $medium-vw) {
+        @each $property in $properties {
+            #{$property}: $medium-value;
+        }
+    }
+
+    @media (min-width: $min-vw) {
+        @each $property in $properties {
+            #{$property}: calc(#{$medium-value} + #{strip-unit($max-value - $medium-value)} * (100vw - #{$medium-vw}) / #{strip-unit($max-vw - $medium-vw)});
+        }
+    }
+
+    @media (min-width: $max-vw) {
+        @each $property in $properties {
+            #{$property}: $max-value;
+        }
+    }
+}
+
+
+
 @function strip-unit($number) {
     @if type-of($number)=="number"and not unitless($number) {
         @return $number / ($number * 0 + 1);
@@ -47,17 +79,6 @@
 
     @return $number;
 }
-
-/* Single property */
-html {
-    @include fluid-type(font-size, 320px, 1366px, 14px, 18px);
-}
-
-/* Multiple properties with same values */
-h1 {
-    @include fluid-type(padding-bottom padding-top, 20em, 70em, 2em, 4em);
-}
-
 
 @mixin crossBrowser($property, $val) {
     -webkit-#{$property}: $val;
