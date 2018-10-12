@@ -1,5 +1,7 @@
-<nav>
+<nav class="nav-bar">
     <a href="{{ SITEURL }}" class="logo" title="Home">{{ AUTHOR[0] + AUTHOR[AUTHOR.index(" ")+1] }}</a>
+    <input class="nav-menu-btn" type="checkbox" id="nav-menu-btn" />
+    <label class="nav-menu-icon" for="nav-menu-btn"><span class="nav-icon"></span></label>
     <ul class="nav-menu">
         <li class="nav-menu__entry" ><a href="{{ SITEURL }}">Blog</a></li>
         {% if DISPLAY_PAGES_ON_MENU %}

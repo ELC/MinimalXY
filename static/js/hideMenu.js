@@ -1,11 +1,22 @@
 let prevScrollpos = window.pageYOffset;
 
-let delta = 50;
+let delta = 70;
+
+let navBtn = document.getElementById('nav-menu-btn');
+
+let component = document.getElementsByClassName('nav-bar')[0];
+
+document.getElementsByTagName("body")[0].addEventListener("click", hideOnClick);
+
+function hideOnClick(e){
+
+    if (! component.contains(e.target) && navBtn.checked ){
+        event.preventDefault();
+        navBtn.checked = false;
+    } 
+}
 
 function hideMenu() {
-
-    let component = document.querySelectorAll('nav')[0];
-
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         return;
@@ -19,7 +30,11 @@ function hideMenu() {
     }
 
     if (prevScrollpos < currentScrollPos - delta) {
-        component.style.top = `-${component.offsetHeight+15}px`;
+        component.style.top = `-${component.offsetHeight}px`;
+
+        navBtn.checked = false;
+
         prevScrollpos = currentScrollPos;
     }
 }
+

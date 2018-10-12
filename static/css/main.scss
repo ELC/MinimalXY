@@ -11,86 +11,10 @@ body {
     margin: 0;
 }
 
-nav {
-    margin: 0 auto 25px;
-    max-width: 1100px;
-    background-color: white;
-    padding: 20px;
-    display: flex;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    align-items: center;
-    height: 70px;
-    top: 0;
-    position: fixed;
-    width: 100%;
-    transition: top 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    z-index: 500;
-
-    @media only screen and (min-width: $medium-break-point) {
-        position: initial;
-    }
-}
-
-.nav-separator {
-    height: 115px;
-
-    @media only screen and (min-width: $medium-break-point) {
-        display: none;
-    }
-}
-
 .invisible {
     display: none
 }
 
-.nav-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding-right: 50px;
-    flex-direction: column;
-    margin: 0;
-
-    @media only screen and (min-width: $medium-break-point) {
-        flex-direction: row;
-        justify-content: flex-end
-    }
-}
-
-.logo {
-    width: 60px;
-    min-width: 60px;
-    height: 60px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
-    font-size: 20pt;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.nav-menu__entry a {
-    text-decoration: none;
-    color: black
-}
-
-.nav-menu__entry {
-    order: 1;
-    font-size: 16pt;
-    margin: 5px 0;
-    text-transform: uppercase;
-    align-self: flex-end;
-    list-style-type: none;
-
-    @media only screen and (min-width: $medium-break-point) {
-        padding: 5px 0 5px 0;
-        order: 1;
-        margin: 0 20px;
-    }
-}
 
 .footer {
     background-color: #000;

@@ -1,0 +1,162 @@
+// Based on https://codepen.io/mutedblues/pen/MmPNPG?editors=1100
+
+
+$small-break-point: 425px;
+$medium-break-point: 768px;
+$large-break-point: 900px;
+$xlarge-break-point: 1024px;
+
+.logo {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-separator {
+    height: 75px;
+
+    @media only screen and (min-width: $medium-break-point) {
+        display: none;
+    }
+}
+
+/* nav-bar */
+
+.nav-bar {
+    background-color: #fff;
+    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: fixed;
+    transition: all 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    width: 100%;
+    top: 0px;
+    z-index: 3;
+
+    @media only screen and (min-width: $medium-break-point) {
+        max-width: 1100px;
+        position: initial;
+        margin: 0 auto 25px;
+        font-size: 18pt;
+        font-weight: 400;
+        padding: 20px;
+        width: initial;
+    }
+}
+
+.nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+
+    @media only screen and (min-width: $medium-break-point) {
+        clear: none;
+        float: right;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+
+.nav-menu__entry {
+
+    a {
+        display: block;
+        margin: 25px 20px;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14pt;
+
+        @media (min-width: $medium-break-point) {
+            font-size: 18pt;
+            margin: 0;
+            padding: 20px 30px;
+        }
+    }
+
+    @media (min-width: $medium-break-point) {
+        float: left;
+    }
+}
+
+/* menu icon */
+
+.nav-menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+
+    @media (min-width: $medium-break-point) {
+        display: none;
+    }
+}
+
+.nav-icon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.nav-icon:before,
+.nav-icon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.nav-icon:before {
+    top: 5px;
+}
+
+.nav-icon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.nav-bar .nav-menu-btn {
+    display: none;
+}
+
+.nav-bar .nav-menu-btn:checked~.nav-menu {
+    max-height: 125px;
+}
+
+.nav-bar .nav-menu-btn:checked~.nav-menu-icon .nav-icon {
+    background: transparent;
+}
+
+.nav-bar .nav-menu-btn:checked~.nav-menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+}
+
+.nav-bar .nav-menu-btn:checked~.nav-menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+}
+
+.nav-bar .nav-menu-btn:checked~.nav-menu-icon:not(.steps) .nav-icon:before,
+.nav-bar .nav-menu-btn:checked~.nav-menu-icon:not(.steps) .nav-icon:after {
+    top: 0;
+}
