@@ -137,18 +137,6 @@
       <div id="toast--desc"></div>
     </div>
 
-    <script>
-      let imgs = document.images;
-      for (let index = 0; index < imgs.length; index++) {
-        const element = imgs[index];
-        if(element.getAttribute('src')) {
-          element.setAttribute('data-src', element.getAttribute('src'));
-          element.setAttribute('src', '{{ SITEURL }}/theme/images/Spinner.svg');
-          element.setAttribute('class', element.getAttribute('class') +' b-lazy');
-        }        
-      }
-    </script>
-
     <script src="{{ SITEURL }}/theme/js/scripts.js" ></script>
 
     {% if ENVIRONMENT %}
