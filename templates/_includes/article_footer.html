@@ -11,18 +11,6 @@
 {% endif %}
 
 
-<!-- Author -->
-<div class="invisible">
-    {% if  article.author_gravatar %}
-        <img alt="Author Gravatar" src="{{  article.author_gravatar }}" onerror="this.src='{{ SITEIMAGE }}'">
-    {% else %}
-        <img alt="Author Gravatar" src="{{ SITEIMAGE }}">
-    {% endif %}
-        <a href="{{ AUTHOR_WEB }}"><span >{{ article.author }}</span></a>
-        <p >{% if article.author==AUTHOR %}{{ AUTHOR_DESCRIPTION }}{% endif %}</p>
-</div>
-
-
 <!-- Share -->
 <p class="share-invitation">Did you like this article? Share it with your friends!</p>
 

@@ -11,7 +11,6 @@
 
   {%- for author, articles in authors|sort %}
     {% if author==AUTHOR %}
-      {% include "_includes/authors_list_item_head.html" %}
 
       <p>{{ AUTHOR_DESCRIPTION }}</p>
       <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
@@ -25,7 +24,7 @@
 
     {%- for author, articles in authors|sort %}
       {% if author!=AUTHOR %}
-        {% include "_includes/authors_list_item_head.html" %}
+
 
         <p>check</p>
         <a href="{{ SITEURL }}/{{ author.url }}/">All articles &#10093;</a>
