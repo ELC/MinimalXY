@@ -7,9 +7,10 @@ if ('serviceWorker' in navigator) {
 
         navigator.serviceWorker.register('/sw.js', { scope: '/'}).then((reg) => {
 
-            if (reg.active && reg.active.state === 'activated'){
-                launch_toast('Remember this site also works offline!');
+            if (reg.active && reg.active.state === 'activated' && navigator.onLine) {
+                    launch_toast('Remember this site also works offline!');
             }
+            
 
         }).catch((e) => {
             console.error('Error during service worker registration:', e);
