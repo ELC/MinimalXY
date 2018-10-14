@@ -25,12 +25,12 @@ function hideMenu() {
   var currentScrollPos = window.pageYOffset;
 
   if (prevScrollpos > currentScrollPos + delta) {
-    component.style.top = "0";
+    component.style.transform = "translateY(0px)";
     prevScrollpos = currentScrollPos;
   }
 
   if (prevScrollpos < currentScrollPos - delta) {
-    component.style.top = "-" + component.offsetHeight + "px";
+    component.style.transform = "translateY(-" + component.offsetHeight + "px)";
 
     navBtn.checked = false;
 

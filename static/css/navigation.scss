@@ -136,12 +136,12 @@ $xlarge-break-point: 1024px;
 
 /* menu btn */
 
-.nav-bar .nav-menu-btn {
+.nav-menu-btn {
     display: none;
 }
 
 .nav-bar .nav-menu-btn:checked~.nav-menu {
-    max-height: 125px;
+    max-height: 175px;
 }
 
 .nav-bar .nav-menu-btn:checked~.nav-menu-icon .nav-icon {

@@ -11,11 +11,10 @@ function backToTop() {
   var component = document.getElementsByClassName("back-to-top")[0];
 
   if (currentScrollPos < viewportHeight) {
-    component.style.bottom = "-" + (component.offsetHeight + 15) + "px";
+    component.style.transform = "translateY(100px)";
   }
 
   if (currentScrollPos > viewportHeight / 2) {
-    component.style.bottom = null;
-    component.style.visibility = "visible";
+    component.style.transform = "translateY(-100px)";
   }
 }
