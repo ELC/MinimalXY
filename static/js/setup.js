@@ -1,4 +1,6 @@
-window.onscroll = () => {
-    hideMenu();
-    backToTop();
-}
+"use strict";
+
+window.onscroll = function() {
+  hideMenu();
+  backToTop();
+};
