@@ -64,6 +64,14 @@ body {
     }
 }
 
+.article__translations {
+    text-align: left;
+
+    a {
+        color: #2196F3 !important;
+    }
+}
+
 .article,
 .page {
     margin: 10px 2em 10px;
@@ -374,7 +382,7 @@ body {
 $max-height: 60px;
 $min-height: 40px;
 
-.back-to-top{
+.back-to-top {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     bottom: -70px;
     transition: transform 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95);
@@ -384,7 +392,7 @@ $min-height: 40px;
     background-color: #333;
     color: #fff;
     text-align: center;
-    
+
     @include fluid-type(font-size, 320px, 1024px, 12pt, 18pt);
     @include fluid-type(border-radius, 320px, 1024px, $min-height, $max-height);
     @include fluid-type(width, 320px, 1024px, $min-height, $max-height);
@@ -392,6 +400,16 @@ $min-height: 40px;
     @include fluid-type(line-height, 320px, 1024px, $min-height * 1.1, $max-height);
 }
 
-.fa-github{
+.fa-github {
     color: black;
+}
+
+iframe {
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+
+    @media only screen and (min-width: $xlarge-break-point) {
+        max-width: initial;
+    }
 }

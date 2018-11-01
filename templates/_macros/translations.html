@@ -1,8 +1,10 @@
 {% macro translations_for(article) %}
-      {% if article.translations %}
-            Also translated in: 
-            {% for translation in article.translations %}
-                  <a href="{{ SITEURL }}/{{ translation.url }}/">{{ translation.lang }}</a>
-            {% endfor %}
+      {% if article.translations  %}
+            {% if article.translations | length >= 2 or article.translations[-1].lang != DEFAULT_LANG%}
+                  {{LANG_MESSAGES[article.lang][1]}}
+                  {% for translation in article.translations if translation.lang != DEFAULT_LANG %}
+                        <a href="{{ SITEURL }}/{{ translation.url }}/">{{ translation.lang }} </a>  
+                  {% endfor %}
+            {% endif %}
       {% endif %}
 {% endmacro %}

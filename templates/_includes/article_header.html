@@ -50,9 +50,11 @@
 
 <!-- Translations -->
 <div class="article__translations">
-    {% if article.translation and article.translator %}
-        Translated by: {{ article.translator }}
-        <br>
+    {% if article.translation %}
+      <a href="{{ SITEURL }}/{{ article.is_translation_of.url }}">{{LANG_MESSAGES[article.lang][0]}} </a>
+      {% if article.translator %}
+        Translated by: {{ article.translator }}  
+      {% endif %}
     {% endif %}
 
     {% import '_macros/translations.html' as translations with context %}
