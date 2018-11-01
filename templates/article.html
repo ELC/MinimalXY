@@ -28,3 +28,15 @@
 </article>
 
 {% endblock content %}
+
+{% block after_external %}
+<script type="text/javascript">
+
+  var options = {
+    sourceAttribute: "src",
+    showCloseButton: true
+  };
+
+  new LuminousGallery(document.querySelectorAll(".gallery"), options);
+</script>
+{% endblock after_external %}
