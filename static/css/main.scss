@@ -16,6 +16,64 @@ body {
 }
 
 
+.paginator {
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 30px auto;
+    @include fluid-type(font-size, $small-break-point, $large-break-point, 12pt, 16pt);
+    
+    &_disabled {
+        color: black;
+        background-color: #fcfcfc !important;
+        @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
+    }
+
+    &_archive {
+        margin-top: 50px;
+        text-align: center;
+        @include fluid-type(font-size, $small-break-point, $large-break-point, 12pt, 16pt);
+
+        a {
+            background-color: #055899;
+            color: white;
+            text-decoration: none;
+            font-weight: 300;
+            transition: background-color 0.5s ease;
+            @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 14px);
+        }
+
+        a:hover {
+            background-color: #007bdd;
+        }
+    }
+
+    &_active {
+        color: white;
+        text-decoration: none;
+        background-color: #007bdd;
+        @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
+    }
+
+    li {
+        display: inline;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        background-color: #055899;
+        transition: background-color 0.5s ease;
+        @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
+    }
+
+    a:hover {
+        background-color: #007bdd;
+    }
+}
+
+
 .footer {
     background-color: #000;
     text-align: center;
