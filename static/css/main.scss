@@ -15,6 +15,20 @@ body {
     display: none
 }
 
+video{
+    max-width:100%;
+}
+
+.two-column{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (min-width: 950px) {
+        margin-left: -4vw;
+        width: calc(100% + 8vw);
+    }
+}
 
 .paginator {
     text-align: center;
@@ -463,11 +477,22 @@ $min-height: 40px;
 }
 
 iframe {
+    display: block;
     margin: 0 auto;
     max-width: 100%;
-    display: block;
+}
 
-    @media only screen and (min-width: $xlarge-break-point) {
-        max-width: initial;
+.youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
