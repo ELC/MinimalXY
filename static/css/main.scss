@@ -94,18 +94,18 @@ video{
     color: white;
     font-size: 16pt;
     padding: 20px 0 20px 0;
-}
 
-.footer a {
-    color: #9b9b9b;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 1s ease;
-}
+    a {
+        color: #9b9b9b;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 1s ease;
+    }
 
-.footer a:hover {
-    color: white;
-    transition: color 1s ease;
+    a:hover {
+        color: white;
+        transition: color 1s ease;
+    }
 }
 
 .footer-container {
@@ -124,15 +124,15 @@ video{
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
+    
+    &-header {
+        font-weight: bold;
+        margin: 25px 0 0px;
 
-.footer-container__column-header {
-    font-weight: bold;
-    margin: 25px 0 0px;
+        @media only screen and (min-width: $small-break-point) {
+            display: none;
 
-    @media only screen and (min-width: $small-break-point) {
-        display: none;
-
+        }
     }
 }
 
@@ -140,9 +140,16 @@ video{
     text-align: left;
 
     a {
-        color: #2196F3 !important;
+        color: #0E5996 !important;
+    }
+
+    a:hover {
+        color: #0f8bef;
+        transition: color 0.5s ease;
     }
 }
+
+
 
 .article,
 .page {
@@ -199,8 +206,13 @@ video{
 
 .article section a,
 .page a {
-    color: #2196F3;
+    color: #0E5996;
     text-decoration: none;
+
+    &:hover {
+        color: #0f8bef;
+        transition: color 0.5s ease;
+    }
 }
 
 .article__header {
@@ -249,24 +261,24 @@ video{
 }
 
 .article__category {
-    color: #106bb3;
+    color: #0E5996;
     text-decoration: none;
     padding: 5px;
     font-size: 14pt;
     font-weight: 500;
     transition: color 0.5s ease;
-}
 
-.article__category:hover {
-    color: #0f8bef;
-    transition: color 0.5s ease;
+    &:hover {
+        color: #0f8bef;
+        transition: color 0.5s ease;
+    }
 }
 
 .article__button {
     text-align: center;
     color: white;
     text-decoration: none;
-    background-color: #106bb3;
+    background-color: #0E5996;
     padding: 10px 25px;
     align-self: flex-end;
     box-sizing: border-box;
@@ -278,11 +290,12 @@ video{
     @media only screen and (min-width: $medium-break-point) {
         margin: 0;
     }
-}
 
-.article__button:hover {
-    background-color: #2e8cd8;
-    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: #2e8cd8;
+        transition: background-color 0.5s ease;
+    }
 }
 
 .article__subheader {
@@ -327,11 +340,11 @@ video{
     display: flex;
     justify-content: center;
     margin: 10px;
-}
 
-.article__badges img {
-    margin-left: 5px !important;
-    height: 28px;
+    img {
+        margin-left: 5px !important;
+        height: 28px;
+    }
 }
 
 .copyright {
