@@ -3,9 +3,9 @@
       <span>{{ AUTHOR_INTRO }}</span>
       <ul >
         {% for name, link in SOCIAL %}
-        <li ><a href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+        <li ><a href="{{ link }}" target="_blank" aria-label="Social {{name}}"><i class="fa fa-{{ name }}"></i></a></li>
         {% endfor %}
       </ul>
-      <a href="{{ AUTHOR_WEB }}" target="_blank"><img alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
+      <a href="{{ AUTHOR_WEB }}" target="_blank" aria-label="Author Link"><img alt="Avatar" src="{{ AUTHOR_AVATAR }}" onerror="this.src='theme/images/avatar.png'"></a>
   </aside>
 </div>

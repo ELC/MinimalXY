@@ -36,7 +36,7 @@
     {% for related_post in article.related_posts %}
         <div class="article-related-post">
             {% if related_post.headerimage %}
-                <a href="{{ SITEURL }}/{{ related_post.url }}">
+                <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
                   <img alt="Related Article Header Image" class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}">
                 </a>
             {% endif %}

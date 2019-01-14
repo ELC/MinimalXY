@@ -5,9 +5,8 @@
 {% block content_title %}
 
 <div class="invisible">
-  <h2>Articles by {{ author }}</h2>
+  <h2>Articles by <a href="{{ SITEURL }}/{{ author.url }}" >{{ author }}</a></h2>
   <br>
-  <a href="{{ SITEURL }}/{{ author.url }}" ></a>
 </div>
 
 {% endblock content_title %}

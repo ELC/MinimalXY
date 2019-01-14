@@ -9,21 +9,21 @@
     {% if articles_page and articles_paginator.num_pages > 1 %}
         <ul class="paginator">
             {% if articles_page.has_previous() and articles_page.number != 2  %}
-                <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&#10094;</a></li>
+                <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}" aria-label="Previous Page">&#10094;</a></li>
             {% endif %}
 
             {% for num in range( 1, 1 + articles_paginator.num_pages ) %}
                 {% if num == articles_page.number %}
                     <li class="paginator_active">{{ num }}</li>
                 {% elif num == 1 or num == articles_paginator.num_pages or (num - articles_page.number)|abs <= PAGINATOR_LIMIT / 2 %}
-                    <li><a href="{{ SITEURL -}} / {{- articles_paginator.page(num).url }}">{{ num }}</a></li>
+                    <li><a href="{{ SITEURL -}} / {{- articles_paginator.page(num).url }}" aria-label="Page number {{ num }}">{{ num }}</a></li>
                 {% elif (num - articles_page.number)|abs == PAGINATOR_LIMIT / 2 + 1 %}
                     <li class="paginator_disabled">...</li>
                 {% endif %}
             {% endfor %}
 
             {% if articles_page.has_next() and articles_page.number != articles_paginator.num_pages - 1 %}
-                <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">&#10095;</a></li>
+                <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}" aria-label="Next Page">&#10095;</a></li>
             {% endif %}
         </ul>
         
