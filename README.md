@@ -35,12 +35,10 @@ The differences with the XY version are the following:
 - Use BEM
 - Migrate Flat to Material Design
 
-Screenshots
+Demo
 -----------
 
-- [Screenshot #1](screenshot1.png)
-- [Screenshot #2](screenshot2.png)
-- [Screenshot #3](screenshot3.png)
+This theme can be seen in [my personal blog](https://elc.github.io)
 
 ## See it in action
 
