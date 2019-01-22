@@ -37,12 +37,12 @@
         <div class="article-related-post">
             {% if related_post.headerimage %}
                 <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                  <img alt="Related Article Header Image" class="article-related-post-img" width="150px" height="150px" src="{{related_post.headerimage}}">
+                  <img alt="Related Article Header Image" class="article-related-post-img" width="900px" height="auto" src="{{related_post.headerimage}}">
                 </a>
             {% endif %}
             <div class="article-related-post-body">
                 <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>
-                <span>{{ related_post.summary }}</span>
+                <span>{{ related_post.summary|striptags }}</span>
             </div>
         </div>
     {% endfor %}

@@ -372,6 +372,7 @@ video{
 
 .article-related-post {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     padding: 1em 1.3em;
     background-color: white;
@@ -379,12 +380,7 @@ video{
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
     @media only screen and (min-width: $small-break-point) {
-        display: flex;
         margin: 10px;
-        box-sizing: border-box;
-        padding: 1em 1.3em;
-        background-color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     }
 }
 
@@ -403,13 +399,9 @@ video{
     }
 }
 
-.article-related-post-img {
-    display: none;
-
-    @media only screen and (min-width: $medium-break-point) {
-        display: block;
-        margin-right: 10px;
-    }
+img.article-related-post-img {
+    margin-left: 0;
+    max-width: 100%;
 }
 
 .share {
