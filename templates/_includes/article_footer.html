@@ -36,9 +36,15 @@
     {% for related_post in article.related_posts %}
         <div class="article-related-post">
             {% if related_post.headerimage %}
-                <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                  <img alt="Related Article Header Image" class="article-related-post-img" width="900px" height="auto" src="{{related_post.headerimage}}">
-                </a>
+                {% if related_post.headerimage[-3:].lower() in ['jpg', 'png'] %}
+                    <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
+                        <img alt="Related Article Header Image" class="b-lazy article-related-post-img" data-src="{{related_post.headerimage}}" width="900px" height="auto" src="{{ related_post.headerimage[:-4] + '-thumbnail' + related_post.headerimage[-4:]  }}">
+                    </a>
+                {% else %}
+                    <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
+                        <img alt="Related Article Header Image" class="article-related-post-img" width="900px" height="auto" src="{{related_post.headerimage}}">
+                    </a>
+                {% endif %}
             {% endif %}
             <div class="article-related-post-body">
                 <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>

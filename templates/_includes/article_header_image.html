@@ -1,7 +1,13 @@
 <!-- Header Image -->
 {% if article.headerimage %}
     <div class="headerimage-article">
-        <img alt="Article Header Image" src="{{ article.headerimage }}" width="100%" height="auto">
+
+        {% if article.headerimage[-3:].lower() in ['jpg', 'png'] %}
+            <img alt="Article Header Image" class="b-lazy" data-src="{{ article.headerimage }}" width="100%" height="auto" src="{{ article.headerimage[:-4] + '-thumbnail' + article.headerimage[-4:] }}">
+        {% else %}
+            <img alt="Article Header Image" width="100%" height="auto" src="{{article.headerimage}}">
+        {% endif %}
+        
         {% if article.headerimagecaption %}
             <p class="caption">{{ article.headerimagecaption }}</p>
         {% endif %}
