@@ -19,15 +19,16 @@ video{
     max-width:100%;
 }
 
-.two-column{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+a {
+    &[target="_blank"]:not([href*="github.com"]):after {
+		font-family: 'FontAwesome';
+		content: " \f08e";
+	}
 
-    @media screen and (min-width: 950px) {
-        margin-left: -4vw;
-        width: calc(100% + 8vw);
-    }
+    &[href*="github.com"]:after {
+		font-family: 'FontAwesome';
+		content: " \f09b";
+	}
 }
 
 .paginator {
