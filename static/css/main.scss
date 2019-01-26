@@ -81,10 +81,10 @@ a {
         background-color: #055899;
         transition: background-color 0.5s ease;
         @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
-    }
 
-    a:hover {
-        background-color: #007bdd;
+        &:hover {
+            background-color: #007bdd;
+        }
     }
 }
 
@@ -101,11 +101,11 @@ a {
         text-decoration: none;
         font-weight: 500;
         transition: color 1s ease;
-    }
 
-    a:hover {
-        color: white;
-        transition: color 1s ease;
+        &:hover {
+            color: white;
+            transition: color 1s ease;
+        }
     }
 }
 
@@ -142,11 +142,11 @@ a {
 
     a {
         color: #0E5996 !important;
-    }
-
-    a:hover {
-        color: #0f8bef;
-        transition: color 0.5s ease;
+        
+        &:hover {
+            color: #0f8bef;
+            transition: color 0.5s ease;
+        }
     }
 }
 
