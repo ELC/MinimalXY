@@ -15,19 +15,50 @@
 <p class="share-invitation">Did you like this article? Share it with your friends!</p>
 
 <div class="share">
-<a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button">
-  <i class="fa fa-facebook"></i>
-  <span>Facebook</span>
-</a>
-<a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="twitter-button">
-  <i class="fa fa-twitter"></i>
-  <span>Twitter</span>
-</a>
-<a href="https://plus.google.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="google-button">
-  <i class="fa fa-google-plus"></i>
-  <span>Google</span>
-</a>
+    <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button">
+    <i class="fa fa-facebook"></i>
+    <span>Facebook</span>
+    </a>
+    <a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="twitter-button">
+    <i class="fa fa-twitter"></i>
+    <span>Twitter</span>
+    </a>
 </div>
+
+<!-- News Letter Subscription -->
+
+<ul class="newsletter-container">
+    <li>
+        <input class="newsletter-check" type="radio" name="ac" id="a1" />
+        <label for="a1" class="newsletter-button">
+            Get notify when a new article is published! Subscribe to the Newsletter
+        </label>
+        <div class="newsletter-content">
+        
+        <p>You can subscribe to the news feed via <strong>Feedly</strong> or <strong>Email</strong>:
+
+            <div class="share">
+                <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Ffeeds.feedburner.com%2F{{ FEED_ALL_ATOM }}' target='blank'
+                    onclick="ga('send', 'event', 'Feedly Subscribe Button', 'click', 'Newsletter'); return true">
+                    <img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-big_2x.png' alt='follow us in feedly' width='131' height='56'>
+                </a>
+
+                <a class="newsletter-button" target="popupwindow" href="https://feedburner.google.com/fb/a/mailverify?uri={{ FEED_ALL_ATOM }}"
+                    onclick="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ FEED_ALL_ATOM }}', 'popupwindow', 'scrollbars=yes,width=550,height=450'); ga('send', 'event', 'Email Subscribe Button', 'click', 'Newsletter'); return true" >
+                    <i class="fa fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+        
+        </p>
+
+        <p>In case you use another reader, check the full list in the <a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a></p>
+
+        </div>
+    </li>
+</ul>
+
+
 
 <!-- Related Posts -->
 {% if article.related_posts %}

@@ -15,20 +15,20 @@ body {
     display: none
 }
 
-video{
-    max-width:100%;
+video {
+    max-width: 100%;
 }
 
 a {
     &[target="_blank"]:not([href*="github.com"]):after {
-		font-family: 'FontAwesome';
-		content: " \f08e";
-	}
+        font-family: 'FontAwesome';
+        content: " \f08e";
+    }
 
     &[href*="github.com"]:after {
-		font-family: 'FontAwesome';
-		content: " \f09b";
-	}
+        font-family: 'FontAwesome';
+        content: " \f09b";
+    }
 }
 
 .paginator {
@@ -38,7 +38,7 @@ a {
     padding: 0;
     margin: 30px auto;
     @include fluid-type(font-size, $small-break-point, $large-break-point, 12pt, 16pt);
-    
+
     &_disabled {
         color: black;
         background-color: #fcfcfc !important;
@@ -125,7 +125,7 @@ a {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    
+
     &-header {
         font-weight: bold;
         margin: 25px 0 0px;
@@ -142,7 +142,7 @@ a {
 
     a {
         color: #0E5996 !important;
-        
+
         &:hover {
             color: #0f8bef;
             transition: color 0.5s ease;
@@ -176,7 +176,7 @@ a {
         }
     }
 
-    .headerimage-article img{
+    .headerimage-article img {
         @media only screen and (min-width: $xlarge-break-point) {
             margin-left: 0;
         }
@@ -409,10 +409,15 @@ img.article-related-post-img {
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     a {
         text-decoration: none;
         color: white;
+    }
+
+    img{
+        margin: 0;
     }
 
     @media only screen and (min-width: $medium-break-point) {
@@ -423,8 +428,9 @@ img.article-related-post-img {
 
 .facebook-button,
 .twitter-button,
-.google-button {
-    margin: 10px;
+.newsletter-button,
+.email-button {
+    margin-left: 10px;
     padding: 0.25em 1em;
 }
 
@@ -436,7 +442,15 @@ img.article-related-post-img {
     background-color: #2196F3;
 }
 
-.google-button {
+.newsletter-button {
+    text-decoration: none;
+    color: white;
+    background-color: #0e5996;
+}
+
+.email-button{
+    text-decoration: none;
+    color: white;
     background-color: #f44336;
 }
 
@@ -497,8 +511,8 @@ iframe {
 .iframe-container {
     overflow: hidden;
     position: relative;
-  }
-  
+}
+
 .iframe-container iframe {
     border: 0;
     height: 100%;
@@ -522,4 +536,38 @@ iframe {
         width: 100%;
         height: 100%;
     }
+}
+
+
+// Newsletter Specifics
+
+.newsletter-check {
+    display: none;
+}
+
+.newsletter-container {
+    list-style: none;
+    padding: 0;
+}
+
+.newsletter-container label {
+    display: block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.newsletter-content {
+    padding: 0 20px 20px;
+    text-align: center;
+    display: none;
+}
+
+.newsletter-container input:checked~.newsletter-content {
+    display: block;
 }
