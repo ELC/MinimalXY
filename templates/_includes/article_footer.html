@@ -15,11 +15,13 @@
 <p class="share-invitation">Did you like this article? Share it with your friends!</p>
 
 <div class="share">
-    <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button">
+    <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button"
+    onclick="ga('send', 'event', 'Facebook Share', 'click', 'Facebook Share'); return true" >
     <i class="fa fa-facebook"></i>
     <span>Facebook</span>
     </a>
-    <a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="twitter-button">
+    <a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ ( '@ELCWeb wrote this interesting article: ' + article.title)|urlencode }}" target="_blank" class="twitter-button"
+    onclick="ga('send', 'event', 'Twitter Share', 'click', 'Twitter Share'); return true" >
     <i class="fa fa-twitter"></i>
     <span>Twitter</span>
     </a>
