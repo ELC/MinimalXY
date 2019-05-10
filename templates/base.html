@@ -105,6 +105,8 @@
     <!-- Fonts -->
     <script src="https://use.fontawesome.com/6af5d1a69f.js" async></script>
 
+    <!-- Localization -->
+    <link rel="resource" type="application/l10n" href="{{ SITEURL }}/localization.ini" />
 
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/apple-touch-icon.png">
@@ -131,7 +133,9 @@
 
     {% include "_includes/footer.html" %}
 
-    <a href="#topbar" class="back-to-top" aria-label="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#topbar" class="back-to-top" aria-label="Back to Top">
+      <i class="fa fa-arrow-up"></i>
+    </a>
 
     <script src="{{ SITEURL }}/theme/js/scripts.js" ></script>
 

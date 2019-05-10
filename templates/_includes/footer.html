@@ -2,13 +2,13 @@
     <div class="footer-container">
         <ul class="footer-container__column">
             {% for p in pages %}
-                <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                <li><a href="{{ SITEURL }}/{{ p.url }}" data-l10n-id="{{ p.title | lower }}"></a></li>
             {% endfor %}
         </ul>
         <ul class="footer-container__column">
-            <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a></li>
-            <li><a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a></li>
-            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
+            <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}" data-l10n-id="categories"></a></li>
+            <li><a href="{{ SITEURL }}/{{ TAGS_URL }}" data-l10n-id="tags"></a></li>
+            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" data-l10n-id="archives"></a></li>
         </ul>
         <ul class="footer-container__column">
             <li><a href="#">FAQ</a></li>

@@ -11,18 +11,18 @@
 {% endif %}
 
 <!-- Contribution -->
-<p class="share-invitation">Do you find a bug or a typo? Have a Suggestion?</p>
+<p class="share-invitation" data-l10n-id="colaboration-invitation"></p>
 
 <div class="share">
     <a target="_blank" class="contribute-button" href='{{ CONTRIBUTION_URL + ( article.source_path[article.source_path.find(CONTRIBUTION_PATH_REPLACE) + ( CONTRIBUTION_PATH_REPLACE |length) :] | replace("\\","/") ) }}'
-    onclick="ga('send', 'event', 'Contribution', 'click', 'Article Contribution'); return true">
-        Change the document and Submit!
+    onclick="ga('send', 'event', 'Contribution', 'click', 'Article Contribution'); return true" 
+    data-l10n-id="colaboration-button">
     </a>
 </div>
 
 
 <!-- Share -->
-<p class="share-invitation">Did you like this article? Share it with your friends!</p>
+<p class="share-invitation" data-l10n-id="share-invitation"></p>
 
 <div class="share">
     <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button"
@@ -42,12 +42,10 @@
 <ul class="newsletter-container">
     <li>
         <input class="newsletter-check" type="radio" name="ac" id="a1" />
-        <label for="a1" class="newsletter-button">
-            Get notify when a new article is published! Subscribe to the Newsletter
-        </label>
+        <label for="a1" class="newsletter-button" data-l10n-id="newsletter-button"></label>
         <div class="newsletter-content">
         
-        <p>You can subscribe to the news feed via <strong>Feedly</strong> or <strong>Email</strong>:
+        <p><span data-l10n-id="subscribe-options"></span><strong> Feedly </strong><span data-l10n-id="or"></span><strong> Email</strong>:
 
             <div class="share">
                 <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Ffeeds.feedburner.com%2F{{ FEED_ALL_ATOM }}' target='blank'
@@ -64,7 +62,7 @@
         
         </p>
 
-        <p>In case you use another reader, check the full list in the <a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a></p>
+        <p><span data-l10n-id="newsletter-feedburner"></span><a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a></p>
 
         </div>
     </li>
@@ -74,7 +72,7 @@
 
 <!-- Related Posts -->
 {% if article.related_posts %}
-<h4 class="related-post-title">Related posts:</h4>
+<h4 class="related-post-title" data-l10n-id="related-posts"></h4>
 <div class="article-related">
     {% for related_post in article.related_posts %}
         <div class="article-related-post">            
