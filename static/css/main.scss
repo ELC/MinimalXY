@@ -429,7 +429,8 @@ img.article-related-post-img {
 .facebook-button,
 .twitter-button,
 .newsletter-button,
-.email-button {
+.email-button,
+.contribute-button {
     margin-left: 10px;
     padding: 0.25em 1em;
 }
@@ -446,6 +447,12 @@ img.article-related-post-img {
     text-decoration: none;
     color: white;
     background-color: #0e5996;
+}
+
+.contribute-button{
+    text-decoration: none;
+    color: white;
+    background-color: #333333;
 }
 
 .email-button{
