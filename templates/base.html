@@ -1,5 +1,13 @@
 <!DOCTYPE html>
+
+{% if article %}
+<html lang="{{ article.lang }}">
+{% elif page %}
+<html lang="{{ page.lang }}">
+{% else %}
 <html lang="{{ DEFAULT_LANG }}">
+{% endif %}
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +15,15 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
     <!-- Meta -->
+    <meta name="name" content="{{ SITENAME }}">
     <meta name="description" content="{{ SITESUBTITLE }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <meta itemprop="name" content="{{ SITENAME }}">
-    <meta itemprop="description" content="{{ SITESUBTITLE }}">
-
-    {% block site_image %}<meta itemprop="image" content="{{ SITEIMAGE }}">{% endblock site_image %}
+    {% block site_image %}<meta name="image" content="{{ SITEIMAGE }}">{% endblock site_image %}
     
 
     <!-- Google Verification -->
-    <meta name="google-site-verification" content="{{ GOOGLE_VERIFICATION }}"/>
-
-    <meta http-equiv="Cache-control" content="must-revalidate, max-age=3600">
+    <meta name="google-site-verification" content="{{ GOOGLE_VERIFICATION }}" />
 
     <!-- Social -->
     {% if article %}
@@ -95,6 +98,9 @@
     {% if TAG_FEED_RSS and tag %}
       <link rel="alternate" type="application/rss+xml" href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(slug=tag.slug) }}" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
+
+    <!-- Comments -->
+
     {% if DISQUS_SITENAME %}
       <link rel="alternate" type="application/rss+xml" href="http://{{ DISQUS_SITENAME }}.disqus.com/latest.rss" title="{{ SITENAME }} Comments RSS Feed">
     {% endif %}
@@ -106,7 +112,7 @@
     <script src="https://use.fontawesome.com/6af5d1a69f.js" async></script>
 
     <!-- Localization -->
-    <link rel="resource" type="application/l10n" href="{{ SITEURL }}/localization.ini" />
+    <link rel="prefetch" type="application/l10n" href="{{ SITEURL }}/localization.ini" />
 
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/apple-touch-icon.png">

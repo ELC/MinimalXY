@@ -177,8 +177,10 @@ a {
     }
 
     .headerimage-article img {
+
         @media only screen and (min-width: $xlarge-break-point) {
             margin-left: 0;
+            width: 100%;
         }
     }
 }
@@ -358,51 +360,73 @@ a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
 
-.copyright span {
-    margin-bottom: 5px;
+    span {
+        margin-bottom: 5px;
+    }
 }
-
 
 .article-related {
     display: flex;
     flex-direction: column;
-}
 
-
-.article-related-post {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 1em 1.3em;
-    background-color: white;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-    @media only screen and (min-width: $small-break-point) {
-        margin: 10px;
-    }
-}
-
-.article-related-post-body {
-    font-size: 12pt;
-    font-weight: 100;
-
-    h5 {
-        margin: 0;
-        font-size: 16pt;
+    &-title {
+        margin: 0 0 10px 0;
+        color: #0E5996;
     }
 
-    a {
-        color: #2196F3 !important;
-        text-decoration: none;
-    }
-}
+    &-post {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 1em 1.3em;
+        background-color: white;
+        margin-bottom: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-img.article-related-post-img {
-    margin-left: 0;
-    max-width: 100%;
+        h3 {
+            margin: 0 0 10px 0;
+            font-size: 18pt;
+            text-align: center;
+        }
+
+        a {
+            color: #2196F3 !important;
+            text-decoration: none;
+        }
+
+
+        @media only screen and (min-width: $small-break-point) {
+            margin: 10px;
+        }
+    }
+
+    &-body {
+        display: flex;
+
+        a {
+            flex: 1.2 1 0;
+        }
+
+        p {
+            margin: 0 0 0 1em;
+            font-size: 13pt;
+            flex: 1 1 0;
+            align-self: center;
+        }
+    }
+
+    &-description {
+        margin: 0 0 0 10px;
+    }
+
+    &-post-img {
+        margin-left: 0 !important;
+        max-width: 100%;
+        border-radius: 15px;
+        width: 100%;
+    }
+
 }
 
 .share {
@@ -413,10 +437,10 @@ img.article-related-post-img {
 
     a {
         text-decoration: none;
-        color: white;
+        color: white !important;
     }
 
-    img{
+    img {
         margin: 0;
     }
 
@@ -449,13 +473,13 @@ img.article-related-post-img {
     background-color: #0e5996;
 }
 
-.contribute-button{
+.contribute-button {
     text-decoration: none;
     color: white;
     background-color: #333333;
 }
 
-.email-button{
+.email-button {
     text-decoration: none;
     color: white;
     background-color: #f44336;
@@ -470,6 +494,7 @@ img.article-related-post-img {
     text-align: center;
 }
 
+.colaboration-invitation,
 .share-invitation {
     font-size: 10pt;
     font-style: italic;
@@ -529,7 +554,6 @@ iframe {
     width: 100%;
 }
 
-
 .youtube-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -548,33 +572,41 @@ iframe {
 
 // Newsletter Specifics
 
-.newsletter-check {
-    display: none;
-}
+.newsletter {
 
-.newsletter-container {
-    list-style: none;
-    padding: 0;
-}
+    &-check {
+        display: none;
+    }
 
-.newsletter-container label {
-    display: block;
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    transition: all .2s ease;
-}
+    &-container {
+        list-style: none;
+        padding: 0;
+    }
 
-.newsletter-content {
-    padding: 0 20px 20px;
-    text-align: center;
-    display: none;
-}
+    &-container label {
+        display: block;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -ms-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+    }
 
-.newsletter-container input:checked~.newsletter-content {
-    display: block;
+    &-content {
+        padding: 0 20px 0 20px;
+        text-align: center;
+        display: none;
+
+        h2 {
+            font-size: 14pt;
+        }
+    }
+
+    &-container input:checked~&-content {
+        display: block;
+    }
+
 }

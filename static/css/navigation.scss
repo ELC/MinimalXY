@@ -49,6 +49,11 @@ $xlarge-break-point: 1024px;
         padding: 20px;
         width: initial;
     }
+
+    h1{
+        display:inline;
+    }
+
 }
 
 .nav-menu {
@@ -95,11 +100,8 @@ $xlarge-break-point: 1024px;
 
 .nav-menu-icon {
     cursor: pointer;
-    display: inline-block;
     float: right;
     padding: 28px 20px;
-    position: relative;
-    user-select: none;
 
     @media (min-width: $medium-break-point) {
         display: none;

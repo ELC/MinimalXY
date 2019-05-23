@@ -1,41 +1,47 @@
+
 <!-- Previous And Next Articles -->
 {% if article.prev_article or article.next_article %}
-<div class="invisible">
+<section class="invisible">
+    <h2 data-l10n-id="previous-next">Do not forget to check the previous and next Articles</h2>
     {% if article.prev_article %}
         <a class="article__button" href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
     {% endif %}
     {% if article.next_article %}
         <a class="article__button" href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}</a>
     {% endif %}
-</div>
+</section>
 {% endif %}
 
 <!-- Contribution -->
-<p class="share-invitation" data-l10n-id="colaboration-invitation"></p>
+<section>
+    <h2 class="colaboration-invitation"><span data-l10n-id="colaboration-invitation">Did you find a bug or a typo? Have a Suggestion?</span></h2>
 
-<div class="share">
-    <a target="_blank" class="contribute-button" href='{{ CONTRIBUTION_URL + ( article.source_path[article.source_path.find(CONTRIBUTION_PATH_REPLACE) + ( CONTRIBUTION_PATH_REPLACE |length) :] | replace("\\","/") ) }}'
-    onclick="ga('send', 'event', 'Contribution', 'click', 'Article Contribution'); return true" 
-    data-l10n-id="colaboration-button">
-    </a>
-</div>
-
+    <div class="share">
+        <a target="_blank" class="contribute-button" 
+        href='{{ CONTRIBUTION_URL + ( article.source_path[article.source_path.find(CONTRIBUTION_PATH_REPLACE) + ( CONTRIBUTION_PATH_REPLACE |length) :] | replace("\\","/") ) }}'
+        onclick="ga('send', 'event', 'Contribution', 'click', 'Article Contribution'); return true" 
+        data-l10n-id="colaboration-button">
+        </a>
+    </div>
+</section>
 
 <!-- Share -->
-<p class="share-invitation" data-l10n-id="share-invitation"></p>
+<section>
+    <h2 class="share-invitation"><span data-l10n-id="share-invitation">Did you like this article? Share it with your friends!</span></h2>
 
-<div class="share">
-    <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button"
-    onclick="ga('send', 'event', 'Facebook Share', 'click', 'Facebook Share'); return true" >
-    <i class="fa fa-facebook"></i>
-    <span>Facebook</span>
-    </a>
-    <a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ ( '@ELCWeb wrote this interesting article: ' + article.title)|urlencode }}" target="_blank" class="twitter-button"
-    onclick="ga('send', 'event', 'Twitter Share', 'click', 'Twitter Share'); return true" >
-    <i class="fa fa-twitter"></i>
-    <span>Twitter</span>
-    </a>
-</div>
+    <div class="share">
+        <a href="http://www.facebook.com/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}&amp;t={{ (SITENAME + ': ' + article.title)|urlencode }}" target="_blank" class="facebook-button"
+        onclick="ga('send', 'event', 'Facebook Share', 'click', 'Facebook Share'); return true" >
+            <i class="fa fa-facebook"></i>
+            Facebook
+        </a>
+        <a href="http://twitter.com/share?url={{ (SITEURL + '/' + article.url)|urlencode }}&amp;text={{ ( '@ELCWeb wrote this interesting article: ' + article.title)|urlencode }}" target="_blank" class="twitter-button"
+        onclick="ga('send', 'event', 'Twitter Share', 'click', 'Twitter Share'); return true" >
+            <i class="fa fa-twitter"></i>
+            Twitter
+        </a>
+    </div>
+</section>
 
 <!-- News Letter Subscription -->
 
@@ -43,9 +49,11 @@
     <li>
         <input class="newsletter-check" type="radio" name="ac" id="a1" />
         <label for="a1" class="newsletter-button" data-l10n-id="newsletter-button"></label>
-        <div class="newsletter-content">
-        
-        <p><span data-l10n-id="subscribe-options"></span><strong> Feedly </strong><span data-l10n-id="or"></span><strong> Email</strong>:
+        <section class="newsletter-content">
+            <h2>
+                <span data-l10n-id="subscribe-options">You can subscribe to the news feed via</span><strong> Feedly </strong>
+                <span data-l10n-id="or">or</span><strong> Email</strong>:
+            </h2>
 
             <div class="share">
                 <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Ffeeds.feedburner.com%2F{{ FEED_ALL_ATOM }}' target='blank'
@@ -59,41 +67,41 @@
                     Email
                 </a>
             </div>
-        
-        </p>
+            
+            <p>
+                <span data-l10n-id="newsletter-feedburner"></span>
+                <a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a>
+            </p>
 
-        <p><span data-l10n-id="newsletter-feedburner"></span><a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a></p>
-
-        </div>
+        </section>
     </li>
 </ul>
 
-
-
 <!-- Related Posts -->
 {% if article.related_posts %}
-<h4 class="related-post-title" data-l10n-id="related-posts"></h4>
-<div class="article-related">
+<section class="article-related">
+    <h2 class="article-related-title" data-l10n-id="related-posts">Related Posts</h2>
     {% for related_post in article.related_posts %}
-        <div class="article-related-post">            
-            <div class="article-related-post-body">
-                <h5><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h5>
+        <article class="article-related-post">            
+            <h3><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h3>
 
+            <div class="article-related-body">
                 {% if related_post.headerimage %}
                     {% if related_post.headerimage[-3:].lower() in ['jpg', 'png'] %}
                         <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                            <img alt="Related Article Header Image" class="b-lazy article-related-post-img" data-src="{{related_post.headerimage}}" width="900px" height="auto" src="{{ related_post.headerimage[:-4] + '-thumbnail' + related_post.headerimage[-4:]  }}">
+                            <img alt="Related Article Header Image" class="b-lazy article-related-post-img" data-src="{{related_post.headerimage}}" src="{{ related_post.headerimage[:-4] + '-thumbnail' + related_post.headerimage[-4:]  }}">
                         </a>
                     {% else %}
                         <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                            <img alt="Related Article Header Image" class="article-related-post-img" width="900px" height="auto" src="{{related_post.headerimage}}">
+                            <img alt="Related Article Header Image" class="article-related-post-img" src="{{related_post.headerimage}}">
                         </a>
                     {% endif %}
                 {% endif %}
 
-                <span>{{ related_post._summary|striptags }}</span>
+                <p class="article-related-description">{{ related_post._summary|striptags }}</p>
+            
             </div>
-        </div>
+        </article>
     {% endfor %}
-</div>
+</section>
 {% endif %}

@@ -2,7 +2,7 @@
 
 {% block title %}{{ article.title|striptags }} 	&#124; {{ SITENAME }}{% endblock %}
 
-{% block site_image %}<meta itemprop="image" content="{{ article.headerimage }}">{% endblock site_image %}
+{% block site_image %}<meta name="image" content="{{ article.headerimage }}">{% endblock site_image %}
 
 {% block content %}
 
@@ -32,7 +32,7 @@
 {% endblock content %}
 
 {% block after_external %}
-<script type="text/javascript">
+<script>
 
   var options = {
     sourceAttribute: "src",
