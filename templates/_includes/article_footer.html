@@ -82,24 +82,22 @@
 <section class="article-related">
     <h2 class="article-related-title" data-l10n-id="related-posts">Related Posts</h2>
     {% for related_post in article.related_posts %}
-        <article class="article-related-post">            
-            <h3><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h3>
-
-            <div class="article-related-body">
-                {% if related_post.headerimage %}
-                    {% if related_post.headerimage[-3:].lower() in ['jpg', 'png'] %}
-                        <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                            <img alt="Related Article Header Image" class="b-lazy article-related-post-img" data-src="{{related_post.headerimage}}" src="{{ related_post.headerimage[:-4] + '-thumbnail' + related_post.headerimage[-4:]  }}">
-                        </a>
-                    {% else %}
-                        <a href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
-                            <img alt="Related Article Header Image" class="article-related-post-img" src="{{related_post.headerimage}}">
-                        </a>
-                    {% endif %}
+        <article class="article-related-post">
+            {% if related_post.headerimage %}
+                {% if related_post.headerimage[-3:].lower() in ['jpg', 'png'] %}
+                    <a class="article-related-post-link" href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
+                        <img alt="Related Article Header Image" class="b-lazy article-related-post-link-img" data-src="{{related_post.headerimage}}" src="{{ related_post.headerimage[:-4] + '-thumbnail' + related_post.headerimage[-4:]  }}">
+                    </a>
+                {% else %}
+                    <a class="article-related-post-link" href="{{ SITEURL }}/{{ related_post.url }}" aria-label="Related Post">
+                        <img alt="Related Article Header Image" class="article-related-post-link-img" src="{{related_post.headerimage}}">
+                    </a>
                 {% endif %}
-
-                <p class="article-related-description">{{ related_post._summary|striptags }}</p>
-            
+            {% endif %}          
+            <div class="article-related-post-body">
+                <h3 class="article-related-post-body-title"><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h3>
+                
+                <p class="article-related-post-body-description">{{ related_post._summary|striptags }}</p>
             </div>
         </article>
     {% endfor %}
