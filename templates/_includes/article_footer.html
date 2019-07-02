@@ -21,6 +21,7 @@
         href='{{ CONTRIBUTION_URL + ( article.source_path[article.source_path.find(CONTRIBUTION_PATH_REPLACE) + ( CONTRIBUTION_PATH_REPLACE |length) :] | replace("\\","/") ) }}'
         onclick="ga('send', 'event', 'Contribution', 'click', 'Article Contribution'); return true" 
         data-l10n-id="colaboration-button">
+        Change the document and Submit!
         </a>
     </div>
 </section>
@@ -48,7 +49,7 @@
 <ul class="newsletter-container">
     <li>
         <input class="newsletter-check" type="radio" name="ac" id="a1" />
-        <label for="a1" class="newsletter-button" data-l10n-id="newsletter-button"></label>
+        <label for="a1" class="newsletter-button" data-l10n-id="newsletter-button">Get notify when a new article is published! Subscribe to the Newsletter</label>
         <section class="newsletter-content">
             <h2>
                 <span data-l10n-id="subscribe-options">You can subscribe to the news feed via</span><strong> Feedly </strong>
@@ -69,7 +70,7 @@
             </div>
             
             <p>
-                <span data-l10n-id="newsletter-feedburner"></span>
+                <span data-l10n-id="newsletter-feedburner">In case you use another reader, check the full list in the </span>
                 <a href="http://feeds.feedburner.com/{{ FEED_ALL_ATOM }}" target="_blank">FeedBurner Pages</a>
             </p>
 

@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="invisible">
-  <h1 data-l10n-id="author"></h1>
+  <h1 data-l10n-id="author">Author</h1>
 
   <br>
 
@@ -13,13 +13,13 @@
     {% if author==AUTHOR %}
 
       <p>{{ AUTHOR_DESCRIPTION }}</p>
-      <a href="{{ SITEURL }}/{{ author.url }}/"><span data-l10n-id="all-articles"></span> &#10093;</a>
+      <a href="{{ SITEURL }}/{{ author.url }}/"><span data-l10n-id="all-articles">All articles</span> &#10093;</a>
 
     {% endif %}
   {% endfor %}
 
   {% if authors|count > 1 %}
-    <h2 data-l10n-id="other-authors"></h2>
+    <h2 data-l10n-id="other-authors">Other authors</h2>
     <br>
 
     {%- for author, articles in authors|sort %}
@@ -27,7 +27,7 @@
 
 
         <p>check</p>
-        <a href="{{ SITEURL }}/{{ author.url }}/"><span data-l10n-id="all-articles"></span> &#10093;</a>
+        <a href="{{ SITEURL }}/{{ author.url }}/"><span data-l10n-id="all-articles">All articles</span> &#10093;</a>
 
       {% endif %}
     {% endfor %}
