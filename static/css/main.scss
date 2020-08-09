@@ -20,7 +20,7 @@ video {
 }
 
 a {
-    &[target="_blank"]:not([href*="github.com"]):after {
+    &[target="_blank"]:not([href*="github.com"]):not(:has(img)):after {
         font-family: 'FontAwesome';
         content: " \f08e";
     }
@@ -186,6 +186,11 @@ a {
 .narrow {
     max-width: 100%;
     margin: 0 auto !important;
+}
+
+.svg-button {
+    margin-top: 10px !important;
+    width: 120px;
 }
 
 .extended {
