@@ -1,7 +1,7 @@
 {% macro translations_for(article) %}
       {% if article.translations  %}
             {% if article.translations | length >= 2 or article.translations[-1].lang != DEFAULT_LANG%}
-                  <span data-l10n-id="also-translated"></span>
+                  <span data-l10n-id="also-translated">Also Translated in: </span>
                   {% for translation in article.translations if translation.lang != DEFAULT_LANG %}
                         <a href="{{ SITEURL }}/{{ translation.url }}/">{{ LANG_MESSAGES[translation.lang]}} </a>  
                   {% endfor %}

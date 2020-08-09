@@ -9,20 +9,20 @@
         <!-- Time to Read -->
         {% if article.ert %}
             <div class="article__metadata-item">
-                <b>{{ article.ert }} <span data-l10n-id="to-read"></span></b>
+                <b>{{ article.ert }} <span data-l10n-id="to-read">to read</span></b>
             </div>
         {% endif %}
 
         <!-- Level -->
         {% if article.level %}
             <div class="article__metadata-item">
-                <b><span data-l10n-id="level"></span> <span data-l10n-id="{{ article.level }}"></span></b>
+                <b><span data-l10n-id="level">Level:</span> <span data-l10n-id="{{ article.level }}">{{ article.level }}</span></b>
             </div>
         {% endif %}
 
         <!-- Comments -->
         <div class="article__metadata-item">
-            <b><a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a> <span data-l10n-id="comments"></span></b>
+            <b><a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a> <span data-l10n-id="comments">Comments</span></b>
         </div>      
             
     </div>
@@ -51,9 +51,9 @@
 <!-- Translations -->
 <div class="article__translations">
     {% if article.translation %}
-      <a href="{{ SITEURL }}/{{ article.is_translation_of.url }}" data-l10n-id="original-version"></a>
+      <a href="{{ SITEURL }}/{{ article.is_translation_of.url }}" data-l10n-id="original-version">Original Version -</a>
       {% if article.translator %}
-        <span data-l10n-id="translated-by"></span> {{ article.translator }}  
+        <span data-l10n-id="translated-by">Translated by: </span> {{ article.translator }}  
       {% endif %}
     {% endif %}
 
