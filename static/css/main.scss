@@ -165,11 +165,17 @@ a {
         }
     }
 
-    .headerimage-article img {
+    .headerimage-article {
+        box-shadow: inset 0px 0px 10px 15px #FCFCFC;
+        
+        img {
+            position: relative;
+            z-index: -2;
 
-        @media only screen and (min-width: $xlarge-break-point) {
-            margin-left: 0;
-            width: 100%;
+            @media only screen and (min-width: $xlarge-break-point) {
+                margin-left: 0;
+                width: 100%;
+            }
         }
     }
 }
@@ -230,9 +236,8 @@ a {
     }
     
     &-loop {
-        padding: 25px 40px 25px;
-        background-color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        padding: 10px 40px 55px;
+        border-bottom: .2rem solid #555;
     }
 
     &__body {
