@@ -5,9 +5,20 @@ $medium-break-point: 768px;
 $large-break-point: 900px;
 $xlarge-break-point: 1024px;
 
+$font-dark: #333333;
+$font-light: #B8B8B8;
+$font-lighter: #E8E8E8;
+
+$link-normal: #004b85;
+$link-lighter: #006cc1;
+
+$background-dark: #111111;
+$background-light: #fcfcfc;
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fcfcfc;
+    background: $background-light;
     margin: 0;
 }
 
@@ -40,8 +51,8 @@ a {
     @include fluid-type(font-size, $small-break-point, $large-break-point, 12pt, 16pt);
 
     &_disabled {
-        color: black;
-        background-color: #fcfcfc !important;
+        color: $font-dark;
+        background-color: $background-light !important;
         @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
     }
 
@@ -51,8 +62,8 @@ a {
         @include fluid-type(font-size, $small-break-point, $large-break-point, 12pt, 16pt);
 
         a {
-            background-color: #055899;
-            color: white;
+            background-color: $link-normal;
+            color: $font-light;
             text-decoration: none;
             font-weight: 300;
             transition: background-color 0.5s ease;
@@ -60,14 +71,14 @@ a {
         }
 
         a:hover {
-            background-color: #007bdd;
+            background-color: $link-lighter;
         }
     }
 
     &_active {
-        color: white;
+        color: $font-light;
         text-decoration: none;
-        background-color: #007bdd;
+        background-color: $link-normal;
         @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
     }
 
@@ -76,35 +87,35 @@ a {
     }
 
     a {
-        color: white;
+        color: $font-light;
         text-decoration: none;
-        background-color: #055899;
+        background-color: $link-normal;
         transition: background-color 0.5s ease;
         @include fluid-type(padding, $small-break-point, $large-break-point, 6px, 16px);
 
         &:hover {
-            background-color: #007bdd;
+            background-color: $link-lighter;
         }
     }
 }
 
 
 .footer {
-    background-color: #000;
+    background-color: $background-dark;
     text-align: center;
-    color: white;
+    color: $font-light;
     font-size: 16pt;
     padding: 20px 0 20px 0;
     max-width: 900px;
 
     a {
-        color: #9b9b9b;
+        color: $font-light;
         text-decoration: none;
         font-weight: 500;
         transition: color 1s ease;
 
         &:hover {
-            color: white;
+            color: $font-lighter;
             transition: color 1s ease;
         }
     }
@@ -114,29 +125,29 @@ a {
         justify-content: space-evenly;
         margin: 0 auto 30px auto;
         flex-direction: column;
-    
+
         @media only screen and (min-width: $small-break-point) {
             flex-direction: row;
             padding-top: 20px;
         }
     }
-    
+
     &-container__column {
         list-style-type: none;
         padding: 0;
         margin: 0;
-    
+
         &-header {
             font-weight: bold;
-            margin: 25px 0 0px;
-    
+            margin: 25px 0 0;
+
             @media only screen and (min-width: $small-break-point) {
                 display: none;
-    
+
             }
         }
     }
-    
+
 }
 
 
@@ -167,8 +178,8 @@ a {
     }
 
     .headerimage-article {
-        box-shadow: inset 0px 0px 10px 15px #FCFCFC;
-        
+        box-shadow: inset 0px 0px 10px 15px $background-light;
+
         img {
             position: relative;
             z-index: -2;
@@ -207,11 +218,11 @@ a {
 
 .article section a,
 .page a {
-    color: #0E5996;
+    color: $link-normal;
     text-decoration: none;
 
     &:hover {
-        color: #0f8bef;
+        color: $link-lighter;
         transition: color 0.5s ease;
     }
 }
@@ -227,7 +238,7 @@ a {
         }
 
         a {
-            color: black;
+            color: $font-dark;
             text-decoration: none;
         }
     }
@@ -235,7 +246,7 @@ a {
     &-complete {
         padding: 25px 0;
     }
-    
+
     &-loop {
         padding: 10px 40px 55px;
         border-bottom: .2rem solid #555;
@@ -273,7 +284,7 @@ a {
     }
 
     &__category {
-        color: #0E5996;
+        color: $link-normal;
         text-decoration: none;
         padding: 5px;
         font-size: 14pt;
@@ -281,16 +292,16 @@ a {
         transition: color 0.5s ease;
 
         &:hover {
-            color: #0f8bef;
+            color: $link-lighter;
             transition: color 0.5s ease;
         }
     }
 
     &__button {
         text-align: center;
-        color: white;
+        color: $font-light;
         text-decoration: none;
-        background-color: #0E5996;
+        background-color: $link-normal;
         padding: 10px 25px;
         align-self: flex-end;
         box-sizing: border-box;
@@ -305,7 +316,7 @@ a {
 
 
         &:hover {
-            background-color: #2e8cd8;
+            background-color: $link-lighter;
             transition: background-color 0.5s ease;
         }
     }
@@ -361,12 +372,12 @@ a {
 
     &__translations {
         text-align: left;
-    
+
         a {
-            color: #0E5996 !important;
-    
+            color: $link-normal !important;
+
             &:hover {
-                color: #0f8bef;
+                color: $font-lighter; 
                 transition: color 0.5s ease;
             }
         }
@@ -391,17 +402,15 @@ a {
 
     &-title {
         margin: 0 0 10px 0;
-        color: #0E5996;
+        color: $link-normal;
     }
 
     &-post {
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        background-color: white;
         margin-bottom: 20px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        border-radius: 15px;
+        border-bottom: 0.1rem solid #333333aa;
 
         @media only screen and (min-width: $xlarge-break-point) {
             margin: 10px;
@@ -409,7 +418,7 @@ a {
         }
 
         &-link {
-            flex: 6 1 0;
+            flex: 5 1 0;
             align-self: center;
 
             &-img {
@@ -432,7 +441,7 @@ a {
                 text-align: center;
 
                 a {
-                    color: #2196F3 !important;
+                    color: $link-normal !important;
                     text-decoration: none;
                 }
             }
@@ -464,7 +473,7 @@ a {
 
     a {
         text-decoration: none;
-        color: white !important;
+        color: $font-light !important;
     }
 
     img {
@@ -496,19 +505,19 @@ a {
 
 .newsletter-button {
     text-decoration: none;
-    color: white;
-    background-color: #0e5996;
+    color: $font-light;
+    background-color: $link-normal;
 }
 
 .contribute-button {
     text-decoration: none;
-    color: white;
+    color: $font-light;
     background-color: #333333;
 }
 
 .email-button {
     text-decoration: none;
-    color: white;
+    color: $font-light;
     background-color: #f44336;
 }
 
@@ -547,7 +556,7 @@ $min-height: 40px;
     right: 4vw;
     z-index: 1;
     background-color: #333;
-    color: #fff;
+    color: $font-lighter;
     text-align: center;
 
     @include fluid-type(font-size, 320px, 1024px, 12pt, 18pt);
