@@ -95,6 +95,7 @@ a {
     color: white;
     font-size: 16pt;
     padding: 20px 0 20px 0;
+    max-width: 900px;
 
     a {
         color: #9b9b9b;
@@ -111,7 +112,7 @@ a {
     &-container {
         display: flex;
         justify-content: space-evenly;
-        margin-bottom: 30px;
+        margin: 0 auto 30px auto;
         flex-direction: column;
     
         @media only screen and (min-width: $small-break-point) {
