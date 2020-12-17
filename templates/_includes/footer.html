@@ -2,20 +2,19 @@
     <div class="footer-container">
         <ul class="footer-container__column">
             {% for p in pages %}
-                <li><a href="{{ SITEURL }}/{{ p.url }}" data-l10n-id="{{ p.title | lower }}">{{ p.title | lower }}</a></li>
+                <li><a href="{{ SITEURL }}/{{ p.url }}" data-l10n-id="{{ p.title | lower }}">{{ p.title}}</a></li>
             {% endfor %}
         </ul>
         <ul class="footer-container__column">
             <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}" data-l10n-id="categories">Categories</a></li>
             <li><a href="{{ SITEURL }}/{{ TAGS_URL }}" data-l10n-id="tags">Tags</a></li>
-            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" data-l10n-id="archives">Archives</a></li>
         </ul>
         <ul class="footer-container__column">
-            <li><a href="#">FAQ</a></li>
+            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" data-l10n-id="archives">Archive</a></li>
         </ul>
     </div>
     <div class="copyright">
-        <span>&copy; {{ MINIMALXY_START_YEAR }}{% if MINIMALXY_START_YEAR and MINIMALXY_CURRENT_YEAR %}-{% endif %}{{ MINIMALXY_CURRENT_YEAR }} {{ AUTHOR }}</span>
-        <span> {% if FEED_ALL_ATOM %} <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>    
+        <span>&copy; {{ COPYRIGHT_YEAR }} {{ AUTHOR }}</span>
+        <span> {% if FEED_ALL_ATOM %} <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a>{% endif %}</span>
     </div>
 </footer>

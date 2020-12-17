@@ -12,40 +12,9 @@
                 <b>{{ article.ert }} <span data-l10n-id="to-read">to read</span></b>
             </div>
         {% endif %}
-
-        <!-- Level -->
-        {% if article.level %}
-            <div class="article__metadata-item">
-                <b><span data-l10n-id="level">Level:</span> <span data-l10n-id="{{ article.level }}">{{ article.level }}</span></b>
-            </div>
-        {% endif %}
-
-        <!-- Comments -->
-        <div class="article__metadata-item">
-            <b><a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a> <span data-l10n-id="comments">Comments</span></b>
-        </div>      
             
     </div>
 
-    <!-- Badges -->
-    <span class="article__badges">        
-        <a href="http://pdfy.net/api/GeneratePDF.aspx?url={{ SITEURL }}/{{ ARTICLE_SAVE_AS | replace("{slug}", article.slug | string) }}" aria-label="Convert to PDF">
-            <img alt="Convert To PDF" src="{{ SITEURL }}/theme/images/PDF.svg">
-        </a>
-        
-        {% if article.jupyternotebook  %}
-            <a href="{{ article.jupyternotebook }}" aria-label="Jupyter Notebook">
-                <img alt="Jupyter Notebook" src="{{ SITEURL }}/theme/images/Jupyter.svg">
-            </a>
-        {% endif %}
-
-        {% if article.slides  %}
-            <a href="article.slides" aria-label="Slides">
-                <img alt="Slides" src="{{ SITEURL }}/theme/images/RevealJS.svg">
-            </a>
-        {% endif %}
-
-    </span>
 </div>
 
 <!-- Translations -->

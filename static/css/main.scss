@@ -1,11 +1,10 @@
 @import 'auxiliary';
 
-$small-break-point: 425px;
+$small-break-point: 480px;
 $medium-break-point: 768px;
-$large-break-point: 900px;
-$xlarge-break-point: 1024px;
+$large-break-point: 1024px;
 
-$font-dark: #333333;
+$font-dark: #222222;
 $font-light: #B8B8B8;
 $font-lighter: #E8E8E8;
 $font-contrast: #FCFCFC;
@@ -20,6 +19,7 @@ $background-light: #fcfcfc;
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: $background-light;
+    color: $font-dark;
     margin: 0;
 }
 
@@ -105,8 +105,16 @@ a {
     background-color: $background-dark;
     text-align: center;
     color: $font-light;
-    font-size: 16pt;
+    font-size: 12pt;
     padding: 20px 0 20px 0;
+
+    @media only screen and (min-width: $medium-break-point) {
+        font-size: 14pt;
+    }
+
+    @media only screen and (min-width: $large-break-point) {
+        font-size: 16pt;
+    }
 
     a {
         color: $font-light;
@@ -173,20 +181,18 @@ a {
         max-width: 100%;
         margin: 0 auto;
 
-        @media only screen and (min-width: $xlarge-break-point) {
+        @media only screen and (min-width: $large-break-point) {
             margin-left: -7vw;
             max-width: calc(100% + 14vw);
         }
     }
 
     .headerimage-article {
-        box-shadow: inset 0px 0px 10px 15px $background-light;
-
         img {
             position: relative;
             z-index: -2;
 
-            @media only screen and (min-width: $xlarge-break-point) {
+            @media only screen and (min-width: $large-break-point) {
                 margin-left: 0;
                 width: 100%;
             }
@@ -200,7 +206,7 @@ a {
 .category h1,
 .tag h1 {
     margin: 10px 0 15px;
-    @include fluid-type3(font-size, $small-break-point, $medium-break-point, $large-break-point, 24pt, 28pt, 32pt);
+    @include fluid-type3(font-size, $small-break-point, $medium-break-point, $large-break-point, 20pt, 28pt, 32pt);
 }
 
 .narrow {
@@ -250,8 +256,13 @@ a {
     }
 
     &-loop {
-        padding: 10px 40px 55px;
+        padding: 10px 0 35px;
         border-bottom: .2rem solid #555;
+
+        @media only screen and (min-width: $large-break-point) {
+            padding: 10px 40px 55px;
+        }
+
     }
 
     &__body {
@@ -275,14 +286,16 @@ a {
 
     &_tags {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
         flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+        justify-content: space-around;
 
-        @media only screen and (min-width: $small-break-point) {
-            flex-direction: row;
+        @media only screen and (min-width: $medium-break-point) {
+            width: auto;
         }
+
     }
 
     &__category {
@@ -327,7 +340,7 @@ a {
         line-height: 100%;
         white-space: nowrap;
 
-        @media only screen and (min-width: $large-break-point) {
+        @media only screen and (min-width: $medium-break-point) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -336,12 +349,12 @@ a {
 
     &__metadata {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-bottom: 10px;
 
-        @media only screen and (min-width: $small-break-point) {
-            flex-direction: row;
+        @media only screen and (min-width: $medium-break-point) {
             margin: 0;
         }
     }
@@ -350,30 +363,32 @@ a {
         display: block;
         wrap: nowrap;
         opacity: 0.75;
-        font-size: 14pt;
+        font-size: 12pt;
         margin: 5px 0;
 
         @media only screen and (min-width: $small-break-point) {
             display: inline-block;
             wrap: nowrap;
-            margin: 0 5px 0;
+            margin-right: 10px;
+            font-size: 14pt;
         }
     }
 
 
-    &__badges {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
+    // &__badges {
+    //     display: flex;
+    //     justify-content: center;
+    //     margin: 10px;
 
-        img {
-            margin-left: 5px !important;
-            height: 28px;
-        }
-    }
+    //     img {
+    //         margin-left: 5px !important;
+    //         height: 28px;
+    //     }
+    // }
 
     &__translations {
         text-align: left;
+        margin-bottom: 10px;
 
         a {
             color: $link-normal !important;
@@ -415,7 +430,7 @@ a {
         padding-bottom: 15px;
         border-bottom: 0.1rem solid #333333aa;
 
-        @media only screen and (min-width: $xlarge-break-point) {
+        @media only screen and (min-width: $large-break-point) {
             margin: 10px;
             flex-direction: row;
         }
@@ -454,7 +469,7 @@ a {
                 font-size: 12pt;
                 align-self: center;
 
-                @media only screen and (min-width: $xlarge-break-point) {
+                @media only screen and (min-width: $large-break-point) {
                     margin: 0 1em 1em 1em;
                 }
 
@@ -542,7 +557,7 @@ a {
 
 .gist {
 
-    @media only screen and (min-width: $xlarge-break-point) {
+    @media only screen and (min-width: $large-break-point) {
         margin-left: -7vw;
         width: calc(100% + 14vw);
     }

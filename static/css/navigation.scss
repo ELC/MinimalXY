@@ -86,7 +86,7 @@ $xlarge-break-point: 1024px;
         @media (min-width: $medium-break-point) {
             font-size: 18pt;
             margin: 0;
-            padding: 15px 30px;
+            padding: 15px;
         }
     }
 
@@ -142,7 +142,7 @@ $xlarge-break-point: 1024px;
 }
 
 .nav-bar .nav-menu-btn:checked~.nav-menu {
-    max-height: 175px;
+    max-height: 250px;
 }
 
 .nav-bar .nav-menu-btn:checked~.nav-menu-icon .nav-icon {
